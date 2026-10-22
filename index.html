@@ -10,7 +10,7 @@
 <meta property="og:title" content="내일의 어린이실 — 프로젝트 아카이브">
 <meta property="og:description" content="궁금한 마음이 이끄는대로. 공공도서관 어린이실을 어린이의 경험 중심으로 새롭게 조성한 과정의 기록.">
 <!-- TODO: og:image 경로를 실제 대표 이미지로 교체 -->
-<meta property="og:image" content="assets/img/hero.jpg">
+<meta property="og:image" content="assets/img/hero/hero-1.jpg">
 
 <!-- ⚠️ 공개 전까지 검색엔진 수집을 막습니다.
      10/28 정식 공개 때 아래 한 줄과 robots.txt 를 지우세요. -->
@@ -64,9 +64,10 @@
   </div>
 
   <div class="wrap">
-    <figure>
+    <figure class="slides" data-slides="assets/img/hero/hero-" data-count="5">
       <div class="ph" data-ratio="16-9">
-        <span><strong>대표 이미지</strong>천안두정도서관 어린이실 전경<br>assets/img/hero.jpg</span>
+        <span><strong>대표 이미지</strong>천안두정도서관 어린이실 전경<br>
+        assets/img/hero/ 에 hero-1.jpg … hero-5.jpg 를 넣으면 돌아가며 보입니다</span>
       </div>
     </figure>
   </div>
@@ -96,7 +97,6 @@
       </p>
     </div>
 
-    <h3>프로젝트 영상</h3>
     <div class="video" data-id="6D1yo-5r82I">
       <button class="video__btn" type="button">
         <span class="video__play" aria-hidden="true">▶</span>
@@ -108,29 +108,57 @@
       영상 기획·제작 스튜디오 펩스 · 음악 이제인 · 촬영 협조 두정도서관 내일의 어린이실 운영팀
     </p>
 
-    <h3>무엇을 다르게 했나</h3>
+    <h3>세 가지 질문</h3>
     <p>
-      내일의 어린이실은 세 가지 축으로 만들어집니다. 각각은 따로 떨어진 영역이 아니라,
-      어린이가 공간에 들어와 책과 재료를 만나고 무언가를 만들어보는 하나의 경험으로 이어집니다.
+      도서관의 어린이실에서 흔히 보이는 장면이 있습니다. 부모와 함께 책을 읽는 어린이,
+      부모와 함께 책을 빌려 가는 어린이, 문화 강좌가 열릴 때 찾아오는 어린이.
+      도서관의 공간과 서비스를 충분히 잘 쓰는 모습입니다.
+    </p>
+    <p>
+      〈내일의 어린이실〉은 여기에 세 가지를 더 물었습니다.
     </p>
 
-    <div class="grid-3">
-      <div class="decision">
-        <p class="decision__q">콘텐츠</p>
-        <p class="muted">듀이 분류나 베스트셀러가 아니라, 어린이가 스스로 관심사를 발견할 수 있는
-        주제로 큐레이션을 구성합니다.</p>
+    <ol class="asks">
+      <li>어린이가 자유롭게 머물며 다양한 탐색을 할 수 있다면?</li>
+      <li>스스로 시도하고 표현하는 기회가 많아진다면?</li>
+      <li>이용자 간의 새로운 만남과 연결의 장이 되어 준다면?</li>
+    </ol>
+
+    <h3>세 가지 경험</h3>
+    <p>
+      이 질문들의 답을 어린이가 실제로 겪는 일로 옮기면 세 가지가 됩니다.
+      셋은 차례로 일어나는 단계가 아니라, 한 번의 방문 안에서 서로 넘나듭니다.
+    </p>
+
+    <dl class="exp">
+      <div>
+        <dt><span>Curiosity</span>탐색</dt>
+        <dd>호기심을 키워나가는 경험. 관심사에 맞는 책이 있는지 서가를 슬쩍 훑어보는 것에서
+        한 권에 몰입해 끝까지 읽는 것까지, 깊이가 저마다 다릅니다.</dd>
       </div>
-      <div class="decision">
-        <p class="decision__q">공간과 빛</p>
-        <p class="muted">어린이의 시선 높이와 움직임을 기준으로 설계하고, 조도보다 빛의 방향과
-        질을 먼저 생각합니다.</p>
+      <div>
+        <dt><span>Creativity</span>창조</dt>
+        <dd>새로운 것을 시도하는 경험. 자신의 이야기를 글로 쓰거나 손으로 만들어 보는 일이
+        모두 여기에 들어갑니다.</dd>
       </div>
-      <div class="decision">
-        <p class="decision__q">작업실</p>
-        <p class="muted">읽는 것에서 멈추지 않고 직접 만들어볼 수 있도록 재료와 도구를 갖춘
-        전용 공간을 둡니다.</p>
+      <div>
+        <dt><span>Connection</span>연결</dt>
+        <dd>나와 다른 타인과 세계를 만나는 경험. 탐색과 창조 사이사이에 친구가 생기고,
+        다른 어린이가 남긴 이야기에 가 닿습니다.</dd>
       </div>
-    </div>
+    </dl>
+
+    <h3>자료실과 작업실을 함께</h3>
+    <p>
+      세 가지 경험은 책만 있는 공간에서는 좀처럼 일어나지 않습니다. 읽은 것을 곧바로
+      만들어 볼 재료가 없고, 만든 것을 다른 어린이가 볼 자리가 없기 때문입니다.
+    </p>
+    <p>
+      그래서 〈내일의 어린이실〉은 어린이실 안에 <b>자료실과 작업실을 함께</b> 두었습니다.
+      서가에서 책을 고르다 작업 테이블로 건너가고, 만들다 막히면 다시 서가로 돌아갑니다.
+      둘을 넘나드는 동안 공간 전체가 하나의 경험으로 이어집니다.
+      이것이 기존 어린이실과 가장 크게 다른 점입니다.
+    </p>
 
     <h3>지금까지</h3>
     <ul class="timeline">
@@ -198,32 +226,27 @@
       <div class="ph" data-ratio="4-3"><span><strong>큐레이션 서가</strong>assets/img/cheonan/shelf-01.jpg</span></div>
       <div class="ph" data-ratio="4-3"><span><strong>큐레이션 서가</strong>assets/img/cheonan/shelf-02.jpg</span></div>
     </div>
-    <div class="todo">
-      <strong>이미지 필요</strong>
-      <p>노션 「참고: 〈내일의 어린이실〉의 13가지 대주제」에 전체 목록이 이미지 한 장으로
-      정리되어 있습니다. 내려받아 <code>assets/img/cheonan/themes-13.png</code>로 넣으면
-      이 자리에 바로 쓸 수 있습니다.</p>
+    <div class="themes">
+      <p class="themes__title">총 13가지 대주제의 컬렉션</p>
+      <ol class="themes__list">
+        <li><b>모양이 있는 이야기</b> 손으로 만지고 눈으로 느껴보는 즐거운 책이 모여있어요.</li>
+        <li><b>냠냠</b> 음식과 식탁을 둘러싼 맛있는 이야기를 살펴봐요.</li>
+        <li><b>움직여 볼까?</b> 운동과 스포츠를 좋아하나요? 보고 나면 몸을 움직이고 싶을 거예요!</li>
+        <li><b>자연사박물관</b> 동물과 식물, 자연과 우주까지! 생명을 사랑하는 탐험가를 위한 이야기 박물관에 초대합니다.</li>
+        <li><b>세상의 모든 도감</b> 궁금한 주제를 자세히 들여다볼 수 있는 도감들이 모여있어요.</li>
+        <li><b>사건현장에 초대합니다</b> 이상하고 신비하고 수상하고 기묘한 이야기를 좋아한다면?</li>
+        <li><b>떠나자 여행</b> 우리가 사는 한국에서 저 멀리 세계까지, 도시와 자연을 찾아 모험과 여행을 시작해요.</li>
+        <li><b>나의 하루</b> 우리 집, 우리 학교, 우리 동네 속 나와 닮은 이야기가 있나요?</li>
+        <li><b>어린이의 내일</b> 미래의 삶이 궁금하다면, 내가 미래를 바꾸고 싶다면?</li>
+        <li><b>오늘의 세계</b> 서로 다른 우리가 함께 잘 살려면 어떻게 해야 할까요?</li>
+        <li><b>변하는 것과 사라지는 것</b> 영원한 것이 있을까요? 다양한 주제를 살펴보며 질문해봐요.</li>
+        <li><b>과학이 만드는 세계</b> 과학과 기술이 바꾸는 세상에 대한 새로운 질문을 던져봐요.</li>
+        <li><b>심심할 때 뭐해?</b> 상상하고 그리고 관찰하고 만드는 즐거움으로 심심할 틈 없는 시간을 보내봐요.</li>
+      </ol>
+      <p class="themes__note">
+        <a href="assets/img/cheonan/themes-13.jpg" target="_blank" rel="noopener">원본 보기 →</a>
+      </p>
     </div>
-
-    <h3>낮은 경계</h3>
-    <p>
-      요즘 도서관에서는 ‘실(室)’을 없애는 시도가 자주 일어납니다.
-      폐쇄적인 분위기를 걷어내기 위해서입니다.
-      내일의 어린이실은 경계를 없애는 대신 <b>낮추는</b> 쪽을 택했습니다.
-    </p>
-    <p>
-      입구의 대출·반납 창구는 키오스크 형태로 시야를 막지 않고,
-      그 너머로 작업실이 훤히 들여다보입니다.
-      누구나 들어갈 수 있는 자료실 안에 어린이 전용 작업실이 있고,
-      작업을 하다가 앞뜰로 그대로 나갈 수 있습니다.
-      경계가 있으면서도 없는 듯한 구성이 오히려 안정감을 줍니다.
-    </p>
-    <p>
-      작업 공간은 원형으로 구성되고 서가가 담의 역할을 해서,
-      열려 있으면서도 동선으로 독립성이 유지됩니다.
-      앉는 면이 넓은 의자, 무게감 있는 스툴처럼
-      서로 다른 신체 조건을 고려한 가구를 함께 두었습니다.
-    </p>
 
     <h3>재료·도구와 작업 테이블</h3>
     <p>
@@ -246,35 +269,29 @@
       </li>
     </ol>
     <div class="grid-3">
-      <div class="ph" data-ratio="4-3"><span><strong>재료와 도구</strong>assets/img/cheonan/tools-01.jpg</span></div>
-      <div class="ph" data-ratio="4-3"><span><strong>작업 테이블</strong>assets/img/cheonan/table-01.jpg</span></div>
-      <div class="ph" data-ratio="4-3"><span><strong>어린이들의 작업</strong>assets/img/cheonan/works-01.jpg</span></div>
+      <img src="assets/img/cheonan/tools-01.jpg" alt="재료와 도구가 놓인 카운터에서 어린이 둘이 작업하는 모습" width="1400" height="1050" loading="lazy">
+      <img src="assets/img/cheonan/table-01.jpg" alt="작업 테이블과 그 너머의 재료 서가" width="1400" height="1050" loading="lazy">
+      <img src="assets/img/cheonan/works-01.jpg" alt="글루건으로 작업 중인 어린이의 손" width="1400" height="1050" loading="lazy">
     </div>
 
-    <h3>서가와 사이니지</h3>
+    <h3>앞뜰</h3>
     <p>
-      서가는 어린이가 책을 ‘찾는’ 곳이 아니라 ‘만나는’ 곳이 되도록 구성했습니다.
-      대출 서가는 미로처럼 이어져, 책을 찾으러 들어갔다가 마음에 드는 자리를 골라
-      잠시 머물 수 있습니다. 책등이 잘 보이도록 배치하고, 서가의 이름은
-      어린이에게 말을 거는 구어체로 썼습니다.
+      어린이실은 실내에서 끝나지 않습니다. 작업실 바로 바깥에 앞뜰을 두어,
+      책을 보다가 만들다가 그대로 나갈 수 있게 했습니다.
+      안과 밖을 오가는 동안 어린이실의 범위가 건물 바깥까지 넓어집니다.
     </p>
     <p>
-      주제는 한 줄로 늘어선 목록이 아니라 마인드맵처럼 뻗어 나갑니다.
-      큐레이션 사이니지는 옮길 수 있게, 선반은 넣었다 뺄 수 있게 만들어
-      운영자가 계속 다르게 시도해볼 수 있도록 했습니다.
+      앞뜰은 어린이들이 가장 자유롭게 쓰는 자리가 되었습니다.
+      책을 읽을 자리로 앞뜰을 고르기도 하고, 혼자 또는 친구와 함께 편한 자세로 쉬거나 놉니다.
+      2024년 10월 나무를 심은 뒤로는 무궁화꽃이 피었습니다 같은 놀이가 벌어지고,
+      요즘은 공놀이까지 합니다.
     </p>
-    <figure>
-      <div class="ph" data-ratio="16-9"><span><strong>사이니지</strong>assets/img/cheonan/signage-01.jpg</span></div>
-    </figure>
+    <div class="grid-3">
+      <img src="assets/img/cheonan/yard-01.jpg" alt="어린이실 안에서 창 너머로 보이는 앞뜰" width="1400" height="933" loading="lazy">
+      <img src="assets/img/cheonan/yard-02.jpg" alt="앞뜰 잔디와 데크에 앉아 책을 읽는 어린이들" width="1400" height="1050" loading="lazy">
+      <img src="assets/img/cheonan/yard-03.jpg" alt="앞뜰에서 뛰어노는 어린이들" width="1400" height="1050" loading="lazy">
+    </div>
 
-    <h3>색을 덜어내기</h3>
-    <p>
-      어린이실의 인테리어는 보통 원색에 가까운 쨍한 색을 씁니다.
-      내일의 어린이실은 반대로 갔습니다. 서가와 벽, 바닥을 밝은 무채색 톤으로 정리하자
-      <b>다채로운 어린이책과 어린이들의 작업이 오히려 돋보였습니다.</b>
-      나무는 한 가지 색으로 통일하지 않고 여러 색감을 함께 썼고,
-      앞뜰과 뒤뜰을 두어 계절의 변화를 공간 안에서 느낄 수 있게 했습니다.
-    </p>
   </div>
 </section>
 
@@ -488,21 +505,13 @@
     </div>
     <p class="pm-hint">← 옆으로 넘기면 전체 과정을 볼 수 있습니다 →</p>
     <p class="pm-note"><b class="pm-hint__mark" aria-hidden="true">↗</b> 우상단 화살표 표시를 누르면 해당 단계의 결과물을 보실 수 있습니다</p>
+    <p class="pm-note">
+      전시에 걸렸던 원본 맵에는 각 단계의 현장 사진과 공유회에서 나온 말이 함께 담겨 있습니다.
+      <a href="assets/img/cheonan/process-map.jpg" target="_blank" rel="noopener">원본 보기 →</a>
+    </p>
   </div>
 
   <div class="wrap">
-    <figure class="mapfig">
-      <a href="assets/img/cheonan/process-map.jpg" target="_blank" rel="noopener">
-        <img src="assets/img/cheonan/process-map-view.jpg" width="1700" height="472" loading="lazy"
-             alt="「함께 걸어온 길」 원본 프로세스 맵. 이용자 리서치·공간·콘텐츠·운영 준비 네 갈래의 일정이 월별로 놓여 있고, 각 단계에 현장 사진과 공유회에서 나온 말이 함께 담겨 있습니다.">
-      </a>
-      <figcaption>
-        전시 ≪오늘의 어린이, 내일의 어린이실≫에 걸렸던 원본 「함께 걸어온 길」입니다.
-        위의 표에는 없는 현장 사진과 공유회에서 나온 말이 함께 담겨 있습니다.
-        <a href="assets/img/cheonan/process-map.jpg" target="_blank" rel="noopener">원본 크게 보기 →</a>
-      </figcaption>
-    </figure>
-
     <h3>몇 가지 결정</h3>
     <p>
       과정에서 내린 판단 가운데, 다른 도서관에서도 비슷한 고민을 하게 될 만한 것들을 추렸습니다.
@@ -641,37 +650,6 @@
       <a href="https://playfund.notion.site/215dcffecb758020af2ddf2234e32f3b" target="_blank" rel="noopener">전시 아카이브 보기 →</a>
     </p>
 
-    <h3>조성 과정 주요 자료</h3>
-    <details>
-      <summary>🏛️ 공간</summary>
-      <div class="details__body">
-        <ul>
-          <li><a href="https://drive.google.com/file/d/1eS-6IXIwAlA48MlXTmBi0EnM-phGdbpV/view" target="_blank" rel="noopener">디자인 원칙 및 요구사항</a></li>
-          <li><a href="https://drive.google.com/file/d/1tIyGL_MhYG_huVtNOvCQrihiTXVcnIH7/view" target="_blank" rel="noopener">디자인 방향</a></li>
-          <li><a href="https://drive.google.com/file/d/11OO0rODqw20eT6rqsKB_iAWFgUFYIogH/view" target="_blank" rel="noopener">최종 설계안</a></li>
-        </ul>
-      </div>
-    </details>
-    <details>
-      <summary>📕 콘텐츠</summary>
-      <div class="details__body">
-        <ul>
-          <li><a href="https://drive.google.com/file/d/1TVbXcUAC90JMrBDMu-f4WhH07tiDbnLG/view" target="_blank" rel="noopener">큐레이션 기획을 위한 데이터 분석 자료</a></li>
-          <li><a href="https://playfund.notion.site/215dcffecb758020af2ddf2234e32f3b" target="_blank" rel="noopener">0813 작업실 속 13가지 주제의 큐레이션 목록</a></li>
-        </ul>
-      </div>
-    </details>
-    <details>
-      <summary>⚙️ 운영 준비</summary>
-      <div class="details__body">
-        <ul>
-          <li><a href="https://playfund.notion.site/215dcffecb758020af2ddf2234e32f3b" target="_blank" rel="noopener">운영준비 워크숍 결과 — 운영원칙 / 이용원칙 수립</a></li>
-        </ul>
-      </div>
-    </details>
-    <p class="muted">
-      ※ 위 자료의 저작권은 재단법인 씨앗 및 각 전문가팀에게 있으며 무단으로 사용하실 수 없습니다.
-    </p>
   </div>
 </section>
 
@@ -778,19 +756,12 @@
 
 <footer class="foot">
   <div class="wrap">
-    <div class="foot__brands">
-      <img class="foot__logo" src="assets/img/brand/primary.png"
-           alt="내일의 어린이실" width="1487" height="640">
-      <a class="foot__org" href="https://see-art.org" target="_blank" rel="noopener">
-        <img src="assets/img/brand/seeart.png" alt="재단법인 씨앗"
-             width="1926" height="313">
-      </a>
-    </div>
-    <p>프로젝트 아카이브</p>
-    <p>문의 <a href="mailto:children@see-art.org">children@see-art.org</a>
-       · <a href="tel:+820317537090">031-753-7090</a></p>
+    <a class="foot__org" href="https://see-art.org" target="_blank" rel="noopener">
+      <img src="assets/img/brand/seeart.png" alt="재단법인 씨앗" width="1926" height="313">
+    </a>
+    <p class="foot__addr">경기도 성남시 중원구 광명로 120 대연빌딩 12층</p>
     <p>본 페이지의 자료에 대한 저작권은 재단법인 씨앗 및 각 전문가팀에게 있으며 무단으로 사용하실 수 없습니다.</p>
-    <p>ⓒ 2026 Seeart Foundation</p>
+    <p class="foot__c">ⓒ 2026 Seeart Foundation</p>
   </div>
 </footer>
 

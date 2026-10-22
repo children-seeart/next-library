@@ -678,11 +678,15 @@ blockquote p:last-child { margin-bottom: 0; }
 
 .foot {
   border-top: 1px solid var(--line);
-  padding-block: 40px calc(40px + env(safe-area-inset-bottom, 0px));
+  padding-block: 52px calc(56px + env(safe-area-inset-bottom, 0px));
   font-size: var(--step--1);
+  line-height: 1.85;
   color: var(--ink-mute);
 }
-.foot p { margin: 0 0 7px; }
+.foot p { margin: 0 0 12px; }
+.foot p:last-child { margin-bottom: 0; }
+.foot__addr { color: var(--ink-soft); }
+.foot__c { letter-spacing: 0.01em; }
 
 /* ---------- 작업용 메모 (공개 전 제거) ---------- */
 
@@ -805,13 +809,13 @@ section[id] + section[id]::before {
   .wrap > .grid-3:has(.ph),
   .wrap > .grid-2:has(img),
   .wrap > .grid-3:has(img) {
-    width: min(1120px, calc(100vw - 56px));
+    width: min(920px, calc(100vw - 56px));
     margin-left: 50%;
     transform: translateX(-50%);
   }
 
   .wrap > .stats {
-    width: min(880px, calc(100vw - 56px));
+    width: min(820px, calc(100vw - 56px));
     margin-left: 50%;
     transform: translateX(-50%);
   }
@@ -892,7 +896,7 @@ body { overflow-x: clip; }
 
 @media (min-width: 900px) {
   .wrap > .iv {
-    width: min(1120px, calc(100vw - 56px));
+    width: min(920px, calc(100vw - 56px));
     margin-left: 50%;
     transform: translateX(-50%);
     display: grid;
@@ -996,15 +1000,8 @@ h1, h2, h3,
    2.3.2 최소 여백은 로고 높이의 1/9(X). 아래 padding 이 그 값보다 넉넉합니다. */
 .nav__home img { display: block; height: 34px; width: auto; }
 @media (min-width: 720px) { .nav__home img { height: 38px; } }
-.foot__logo {
-  display: block;
-  height: 54px;
-  width: auto;
-  margin-bottom: 20px;
-}
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .nav__home img,
-  :root:not([data-theme="light"]) .foot__logo { filter: invert(1); }
+  :root:not([data-theme="light"]) .nav__home img { filter: invert(1); }
 }
 
 /* ---------- 문의 ---------- */
@@ -1017,29 +1014,208 @@ h1, h2, h3,
   font-size: var(--step--1);
 }
 
-/* ---------- 푸터의 두 브랜드 ---------- */
-.foot__brands {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  flex-wrap: wrap;
-  margin-bottom: 22px;
-}
-.foot__brands .foot__logo { margin-bottom: 0; }
-.foot__org img { display: block; height: 20px; width: auto; }
+/* ---------- 푸터 ---------- */
+.foot__org { display: inline-block; margin-bottom: 20px; }
+.foot__org img { display: block; height: 23px; width: auto; }
 .foot a { color: inherit; }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .foot__org img { filter: invert(1); }
 }
 
-/* ---------- 원본 프로세스 맵 ---------- */
-.mapfig img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border: 1px solid var(--line);
+/* ---------- 13가지 대주제 ---------- */
+/* 본문 설명과 섞이지 않도록, 섹션 색으로 테를 두른 패널에 담습니다.
+   폭도 본문보다 넓혀서 '읽는 글'이 아니라 '보는 목록'으로 읽히게 합니다. */
+.themes {
+  background: var(--sec-bg, var(--bg-sunk));
+  border: 1px solid color-mix(in srgb, var(--sec, var(--line)) 60%, transparent);
   border-radius: var(--radius);
-  background: var(--bg-card);
+  padding: 28px 30px 20px;
+  margin-block: 34px;
 }
-.mapfig a:hover img { border-color: var(--accent); }
-.mapfig figcaption a { white-space: nowrap; }
+@media (min-width: 900px) {
+  .wrap > .themes {
+    width: min(820px, calc(100vw - 56px));
+    margin-left: 50%;
+    transform: translateX(-50%);
+    padding: 34px 40px 24px;
+  }
+}
+.themes__title {
+  font-family: var(--font-title);
+  font-weight: 400;
+  font-size: var(--step-1);
+  color: var(--ink);
+  text-align: center;
+  margin: 0 0 22px;
+}
+.themes__list { list-style: none; counter-reset: th; margin: 0; padding: 0; }
+.themes__list li {
+  counter-increment: th;
+  position: relative;
+  margin: 0;
+  padding: 11px 0 11px 34px;
+  border-top: 1px solid color-mix(in srgb, var(--sec, var(--line)) 55%, transparent);
+  color: var(--ink-soft);
+  font-size: var(--step--1);
+  line-height: 1.6;
+}
+.themes__list li::before {
+  content: counter(th);
+  position: absolute;
+  left: 0;
+  top: 13px;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: var(--sec-ink, var(--ink-mute));
+  color: var(--bg-card);
+  font-size: 0.66rem;
+  font-weight: 700;
+  line-height: 19px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.themes__list b { color: var(--ink); margin-right: 3px; }
+.themes__note {
+  margin: 16px 0 0;
+  font-size: var(--step--1);
+  text-align: right;
+}
+
+/* ---------- 프로젝트가 더 물은 세 가지 ---------- */
+.asks {
+  list-style: none;
+  counter-reset: ask;
+  margin: 26px 0 40px;
+  padding: 0 0 0 20px;
+  border-left: 3px solid var(--sec, var(--line));
+}
+.asks li {
+  counter-increment: ask;
+  position: relative;
+  margin: 0 0 14px;
+  padding-left: 26px;
+  font-family: var(--font-title);
+  font-size: var(--step-1);
+  line-height: 1.5;
+  color: var(--sec-ink, var(--accent));
+}
+.asks li:last-child { margin-bottom: 0; }
+.asks li::before {
+  content: counter(ask);
+  position: absolute;
+  left: 0;
+  top: 0.3em;
+  font-family: var(--font-body);
+  font-size: var(--step--1);
+  font-weight: 700;
+  color: var(--ink-mute);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- 어린이실의 세 가지 경험 ---------- */
+.exp { margin: 26px 0 36px; }
+.exp > div {
+  display: grid;
+  gap: 6px 32px;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+}
+.exp > div:last-child { border-bottom: 1px solid var(--line); }
+@media (min-width: 760px) {
+  .exp > div { grid-template-columns: 170px minmax(0, 1fr); align-items: start; }
+}
+.exp dt {
+  font-family: var(--font-title);
+  font-size: var(--step-1);
+  color: var(--ink);
+}
+.exp dt span {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sec-ink, var(--ink-mute));
+  margin-bottom: 3px;
+}
+.exp dd { margin: 0; color: var(--ink-soft); }
+
+/* 격자에 들어간 사진은 같은 비율로 맞춰 잘라 줍니다 */
+.grid-2 > img, .grid-3 > img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+/* ---------- 대표 이미지 슬라이드 ---------- */
+.slides { position: relative; }
+.slides__frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-sunk);
+}
+.slides__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity .7s ease;
+}
+.slides__img[data-on] { opacity: 1; }
+.slides__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+.slides__dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--line);
+  cursor: pointer;
+  transition: background .2s ease;
+}
+.slides__dot[aria-current="true"] { background: var(--accent); }
+.slides__dot:hover { background: var(--ink-mute); }
+@media (prefers-reduced-motion: reduce) {
+  .slides__img { transition: none; }
+}
+
+/* 슬라이드 좌우 화살표 */
+.slides__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  padding: 0 0 3px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(16, 24, 32, .42);
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background .18s ease;
+}
+.slides__arrow[data-way="prev"] { left: 12px; }
+.slides__arrow[data-way="next"] { right: 12px; }
+.slides__arrow:hover,
+.slides__arrow:focus-visible { background: rgba(16, 24, 32, .72); }
+@media (min-width: 900px) {
+  .slides__arrow { width: 48px; height: 48px; font-size: 1.7rem; }
+  .slides__arrow[data-way="prev"] { left: 18px; }
+  .slides__arrow[data-way="next"] { right: 18px; }
+}

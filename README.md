@@ -33,7 +33,10 @@ python3 -m http.server 8000
 
 ## 자주 하는 작업
 
-**사진 넣기** — `assets/img/cheonan/` 등에 파일을 넣고, `index.html`에서 해당
+**맨 위 대표 이미지** — `assets/img/hero/` 에 `hero-1.jpg` 부터 차례로 넣기만 하면
+돌아가며 보입니다. HTML 은 고칠 필요 없습니다. 자세한 규격은 그 폴더의 README 를 보세요.
+
+**그 밖의 사진** — `assets/img/cheonan/` 등에 파일을 넣고, `index.html`에서 해당
 `<div class="ph">…</div>` 를 `<img src="assets/img/cheonan/파일명.jpg" alt="설명">` 으로 바꿉니다.
 
 **영상 넣기** — YouTube에 **‘일부공개(Unlisted)’**로 올린 뒤, `<div class="video" data-id="">`의
