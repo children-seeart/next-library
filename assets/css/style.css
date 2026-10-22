@@ -457,6 +457,11 @@ figcaption { font-size: var(--step--1); color: var(--ink-mute); margin-top: 10px
 .pm__row[data-lane="content"]  .pm__label span { background: var(--lane-content); }
 .pm__row[data-lane="ops"]      .pm__label span { background: var(--lane-ops); }
 
+.pm__row[data-lane="research"] { --lane: var(--lane-research); }
+.pm__row[data-lane="space"]    { --lane: var(--lane-space); }
+.pm__row[data-lane="content"]  { --lane: var(--lane-content); }
+.pm__row[data-lane="ops"]      { --lane: var(--lane-ops); }
+
 .pm__row[data-lane="research"] .pm__item { background: var(--lane-research-bg); border-color: var(--lane-research); }
 .pm__row[data-lane="space"]    .pm__item { background: var(--lane-space-bg);    border-color: var(--lane-space); }
 .pm__row[data-lane="content"]  .pm__item { background: var(--lane-content-bg);  border-color: var(--lane-content); }
@@ -467,21 +472,23 @@ figcaption { font-size: var(--step--1); color: var(--ink-mute); margin-top: 10px
   border-left-width: 3px;
   border-radius: 7px;
   padding: 5px 9px;
-  font-size: 0.76rem;
+  font-size: 0.72rem;
   line-height: 1.38;
   color: var(--ink);
   min-width: 0;
 }
+/* 날짜는 제목 앞에 같은 줄로 붙입니다. 한 줄 차지하던 것이 사라져
+   카드가 전부 한 단계씩 낮아집니다. */
 .pm__date {
-  display: block;
   font-size: 0.68rem;
   font-variant-numeric: tabular-nums;
   color: var(--ink-mute);
   letter-spacing: 0.01em;
-  margin-bottom: 0;
+  margin-right: 5px;
+  white-space: nowrap;
 }
 .pm__item b { font-weight: 700; }
-.pm__sub { display: block; color: var(--ink-soft); font-size: 0.7rem; margin-top: 1px; }
+.pm__sub { display: block; color: var(--ink-soft); font-size: 0.68rem; line-height: 1.3; margin-top: 2px; }
 
 /* 시간 축 — 맵 맨 위 */
 .pm__axis {
@@ -1033,12 +1040,7 @@ h1, h2, h3,
   margin-block: 34px;
 }
 @media (min-width: 900px) {
-  .wrap > .themes {
-    width: min(820px, calc(100vw - 56px));
-    margin-left: 50%;
-    transform: translateX(-50%);
-    padding: 34px 40px 24px;
-  }
+  .themes { padding: 34px 40px 24px; }
 }
 .themes__title {
   font-family: var(--font-title);
@@ -1219,3 +1221,19 @@ h1, h2, h3,
   .slides__arrow[data-way="prev"] { left: 18px; }
   .slides__arrow[data-way="next"] { right: 18px; }
 }
+
+/* 자료가 걸린 칸은 바탕과 테두리를 한 톤 진하게 — 눌러볼 곳이 먼저 눈에 띄도록 */
+.pm__row[data-lane="research"] a.pm__item,
+.pm__row[data-lane="space"]    a.pm__item,
+.pm__row[data-lane="content"]  a.pm__item,
+.pm__row[data-lane="ops"]      a.pm__item {
+  background: color-mix(in srgb, var(--lane) 30%, var(--bg-card));
+  border-color: color-mix(in srgb, var(--lane) 88%, var(--ink));
+}
+.pm__row[data-lane="research"] a.pm__item:hover,
+.pm__row[data-lane="space"]    a.pm__item:hover,
+.pm__row[data-lane="content"]  a.pm__item:hover,
+.pm__row[data-lane="ops"]      a.pm__item:hover {
+  background: color-mix(in srgb, var(--lane) 44%, var(--bg-card));
+}
+.pm__row[data-lane="key"] a.pm__item { border-color: var(--accent); }
