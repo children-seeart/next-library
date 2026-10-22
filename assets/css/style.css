@@ -1,36 +1,68 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap");
+
+/* 가이드라인 2.5 지정서체 — 제목은 고운돋움, 본문과 영문은 Pretendard.
+   고운돋움에도 알파벳이 들어 있어서, 제목 속 영문·숫자만 Pretendard 로 끌어오도록
+   라틴 영역만 담당하는 별칭을 따로 만들어 앞에 세웁니다. */
+@font-face {
+  font-family: "PretendardLatin";
+  src: url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/static/woff2/Pretendard-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+2000-206F, U+2070-209F, U+20A0-20BF, U+2100-214F, U+2190-21FF, U+2212;
+}
+@font-face {
+  font-family: "PretendardLatin";
+  src: url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/static/woff2/Pretendard-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+2000-206F, U+2070-209F, U+20A0-20BF, U+2100-214F, U+2190-21FF, U+2212;
+}
 
 /* ============================================================
    내일의 어린이실 아카이브 — 스타일
    색·간격은 모두 아래 토큰에서만 바꿉니다.
    ============================================================ */
 
-/* 브랜드 색 — 〈내일의 어린이실〉 가이드라인의 4색을 그대로 씁니다.
-   네 색이 동등한 파트너이고, 본문 강조색은 운영(teal)에서 어둡게 파생했습니다. */
+/* 브랜드 색 — 〈내일의 어린이실〉 가이드라인 2.7 주요·보조 컬러 그대로.
+   주요: Warm White / Pantone 4249 C / Pantone 4163 C
+   보조: Pantone Cool Gray 2 C / Pantone Black 6 C
+   색이 둘뿐이라 프로세스 맵 네 갈래는 두 색의 '밝은 짝 · 짙은 짝'으로 나눴습니다.
+   사람과 내용에 해당하는 일은 teal, 공간과 운영에 해당하는 일은 tan 계열입니다. */
 :root {
-  --brand-blue:  #A6DCF8;   /* 이용자 리서치 */
-  --brand-tan:   #C6B186;   /* 공간 */
-  --brand-green: #D6E8AE;   /* 콘텐츠 */
-  --brand-teal:  #7CBCAC;   /* 운영 준비 */
+  --warm-white:  #FCFCF1;   /* Warm White */
+  --brand-tan:   #C0AB89;   /* Pantone 4249 C */
+  --brand-teal:  #85C4B2;   /* Pantone 4163 C */
+  --cool-gray:   #D0D0CE;   /* Pantone Cool Gray 2 C */
+  --brand-black: #101820;   /* Pantone Black 6 C */
 
-  --bg:        #FBFBFA;
-  --bg-sunk:   #F1F4F3;
+  /* 두 주요 색에서 명도만 낮춰 만든 짝 */
+  --tan-deep:    #97815A;
+  --teal-deep:   #4E9078;
+
+  --bg:        var(--warm-white);
+  --bg-sunk:   #F4F4E6;
   --bg-card:   #FFFFFF;
-  --ink:       #222729;
-  --ink-soft:  #4F555A;
-  --ink-mute:  #878D90;
-  --line:      #E2E6E5;
-  --accent:    #2F7566;
-  --accent-sunk: #EAF3F0;
+  --ink:       var(--brand-black);
+  --ink-soft:  #48525A;
+  --ink-mute:  #858C8C;
+  --line:      #E3E3D8;
+  --accent:    #3C7D6B;
+  --accent-sunk: #E9F3EF;
 
-  --lane-research:    var(--brand-blue);
-  --lane-research-bg: #EBF7FD;
+  --lane-research:    var(--brand-teal);
+  --lane-research-bg: #EDF6F3;
   --lane-space:       var(--brand-tan);
-  --lane-space-bg:    #F3EFE5;
-  --lane-content:     var(--brand-green);
-  --lane-content-bg:  #F5F9EB;
-  --lane-ops:         var(--brand-teal);
-  --lane-ops-bg:      #E5F2EE;
+  --lane-space-bg:    #F5F1E8;
+  --lane-content:     var(--teal-deep);
+  --lane-content-bg:  #E6F0EC;
+  --lane-ops:         var(--tan-deep);
+  --lane-ops-bg:      #EFEAE0;
+
+  --font-body:  Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+                system-ui, sans-serif;
+  --font-title: "PretendardLatin", "Gowun Dodum", Pretendard, -apple-system,
+                "Apple SD Gothic Neo", system-ui, sans-serif;
 
   --wrap:      720px;
   --wrap-wide: 1080px;
@@ -38,31 +70,31 @@
 
   --step--1: clamp(0.82rem, 0.8rem + 0.1vw, 0.88rem);
   --step-0:  clamp(1rem, 0.97rem + 0.15vw, 1.08rem);
-  --step-1:  clamp(1.2rem, 1.1rem + 0.4vw, 1.4rem);
-  --step-2:  clamp(1.5rem, 1.3rem + 0.9vw, 2rem);
-  --step-3:  clamp(1.9rem, 1.5rem + 1.8vw, 3rem);
+  --step-1:  clamp(1.12rem, 1.05rem + 0.32vw, 1.32rem);
+  --step-2:  clamp(1.55rem, 1.28rem + 1.3vw, 2.25rem);
+  --step-3:  clamp(1.95rem, 1.5rem + 2.1vw, 3.1rem);
 
   color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg:        #15181A;
-    --bg-sunk:   #1C2023;
-    --bg-card:   #1E2225;
-    --ink:       #EAEEEF;
-    --ink-soft:  #B6BCBE;
-    --ink-mute:  #868C8E;
-    --line:      #2F3437;
+    --bg:        #14171A;
+    --bg-sunk:   #1B1F22;
+    --bg-card:   #1D2126;
+    --ink:       #ECEEE4;
+    --ink-soft:  #B4BAB6;
+    --ink-mute:  #868C8A;
+    --line:      #2E3337;
     --accent:    var(--brand-teal);
-    --accent-sunk: #1A2A27;
+    --accent-sunk: #172723;
 
-    /* 어두운 바탕에서는 브랜드 4색을 그대로 띠·테두리로 쓰고
+    /* 어두운 바탕에서는 브랜드 색을 띠·테두리로 쓰고
        카드 바탕만 어둡게 깔아 대비를 확보합니다. */
-    --lane-research-bg: #19262D;
-    --lane-space-bg:    #292419;
-    --lane-content-bg:  #222819;
-    --lane-ops-bg:      #182723;
+    --lane-research-bg: #162622;
+    --lane-space-bg:    #262117;
+    --lane-content-bg:  #13221F;
+    --lane-ops-bg:      #221E15;
     color-scheme: dark;
   }
 }
@@ -76,10 +108,9 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
-               "Malgun Gothic", system-ui, sans-serif;
+  font-family: var(--font-body);
   font-size: var(--step-0);
-  line-height: 1.78;
+  line-height: 1.6;
   word-break: keep-all;
   overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
@@ -96,8 +127,7 @@ a:hover { text-decoration-color: var(--accent); }
 .wrap { width: 100%; max-width: var(--wrap); margin-inline: auto; padding-inline: 20px; }
 .wrap-wide { width: 100%; max-width: var(--wrap-wide); margin-inline: auto; padding-inline: 20px; }
 
-section[id] { padding-block: clamp(48px, 8vw, 88px); }
-section[id] + section[id] { border-top: 1px solid var(--line); }
+section[id] { padding-block: clamp(64px, 11vw, 136px); }
 
 /* ---------- 상단 내비 ---------- */
 
@@ -192,21 +222,28 @@ section[id] + section[id] { border-top: 1px solid var(--line); }
 }
 h2 {
   font-size: var(--step-2);
-  line-height: 1.3;
-  letter-spacing: -0.025em;
-  font-weight: 700;
-  margin: 0 0 20px;
+  line-height: 1.14;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+  margin: 0 0 28px;
+  max-width: 16em;
 }
 h3 {
   font-size: var(--step-1);
-  line-height: 1.4;
-  letter-spacing: -0.015em;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
   font-weight: 700;
-  margin: 48px 0 14px;
+  margin: clamp(52px, 7vw, 84px) 0 16px;
 }
 h4 { font-size: var(--step-0); font-weight: 700; margin: 28px 0 8px; }
 p { margin: 0 0 18px; }
-.lede { font-size: var(--step-1); line-height: 1.65; color: var(--ink-soft); margin-bottom: 28px; }
+.lede {
+  font-size: var(--step-1);
+  line-height: 1.52;
+  color: var(--ink-soft);
+  margin-bottom: 36px;
+  max-width: 30em;
+}
 .muted { color: var(--ink-mute); font-size: var(--step--1); }
 
 /* ---------- 질문 블록 ---------- */
@@ -325,7 +362,7 @@ figcaption { font-size: var(--step--1); color: var(--ink-mute); margin-top: 10px
   font-size: var(--step--1);
   color: var(--ink-mute);
 }
-.timeline__note { margin: 8px 0 0; font-size: var(--step--1); color: var(--ink-soft); line-height: 1.65; }
+.timeline__note { margin: 8px 0 0; font-size: var(--step--1); color: var(--ink-soft); line-height: 1.55; }
 
 .tag {
   display: inline-block;
@@ -352,7 +389,7 @@ figcaption { font-size: var(--step--1); color: var(--ink-mute); margin-top: 10px
   background: var(--bg-card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 20px 0;
+  padding: 16px 0;
   overscroll-behavior-x: contain;
 }
 @media (max-width: 720px) {
@@ -363,9 +400,9 @@ figcaption { font-size: var(--step--1); color: var(--ink-mute); margin-top: 10px
   .pm__item { padding: 5px 7px; font-size: 0.7rem; line-height: 1.45; border-radius: 6px; }
   .pm__date { font-size: 0.62rem; }
   .pm__sub { font-size: 0.64rem; }
-  .pm__month { padding: 7px 7px; font-size: 0.66rem; }
-  .pm__month b { font-size: 0.82rem; }
-  .pm__months { padding-right: 12px; }
+  .pm__year { padding: 4px 7px 2px; font-size: 0.62rem; }
+  .pm__month { padding: 3px 7px 6px; font-size: 0.82rem; }
+  .pm__years, .pm__months { padding-right: 12px; }
 }
 
 .pm__inner { width: max-content; min-width: 100%; }
@@ -378,7 +415,7 @@ figcaption { font-size: var(--step--1); color: var(--ink-mute); margin-top: 10px
   z-index: 3;
   flex: none;
   width: var(--label);
-  padding: 9px 10px 0 16px;
+  padding: 7px 10px 0 16px;
   display: flex;
   align-items: flex-start;
   background: linear-gradient(to right, var(--bg-card) 78%, transparent);
@@ -400,8 +437,8 @@ figcaption { font-size: var(--step--1); color: var(--ink-mute); margin-top: 10px
   grid-auto-flow: row dense;   /* 빈 줄 없이 앞 행부터 채웁니다 */
   grid-auto-rows: min-content;
   align-content: start;
-  gap: 5px 6px;
-  padding: 7px 16px 7px 0;
+  gap: 4px 6px;
+  padding: 5px 16px 5px 0;
 }
 
 /* 레인별 색 — 옅은 띠를 깔아 비어 있는 구간도 레인으로 읽히게 합니다 */
@@ -429,9 +466,9 @@ figcaption { font-size: var(--step--1); color: var(--ink-mute); margin-top: 10px
   border: 1px solid;
   border-left-width: 3px;
   border-radius: 7px;
-  padding: 7px 10px;
+  padding: 5px 9px;
   font-size: 0.76rem;
-  line-height: 1.5;
+  line-height: 1.38;
   color: var(--ink);
   min-width: 0;
 }
@@ -441,16 +478,16 @@ figcaption { font-size: var(--step--1); color: var(--ink-mute); margin-top: 10px
   font-variant-numeric: tabular-nums;
   color: var(--ink-mute);
   letter-spacing: 0.01em;
-  margin-bottom: 1px;
+  margin-bottom: 0;
 }
 .pm__item b { font-weight: 700; }
-.pm__sub { display: block; color: var(--ink-soft); font-size: 0.7rem; margin-top: 2px; }
+.pm__sub { display: block; color: var(--ink-soft); font-size: 0.7rem; margin-top: 1px; }
 
-/* 가운데 시간 축 */
+/* 시간 축 — 맵 맨 위 */
 .pm__axis {
   display: flex;
   align-items: stretch;
-  margin: 10px 0;
+  margin: 0 0 12px;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   background: var(--bg-sunk);
@@ -462,19 +499,30 @@ figcaption { font-size: var(--step--1); color: var(--ink-mute); margin-top: 10px
   font-size: 0.68rem;
   padding-left: 0;
 }
+.pm__scale { display: flex; flex-direction: column; }
+.pm__years,
 .pm__months {
   display: grid;
   grid-template-columns: repeat(14, var(--col));
   padding-right: 16px;
 }
+/* 연도는 월 위에 따로 한 줄 — 11월·1월만 내려앉아 보이던 것을 없앱니다 */
+.pm__year {
+  padding: 5px 10px 3px;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-mute);
+  border-left: 1px solid var(--line);
+  font-variant-numeric: tabular-nums;
+}
 .pm__month {
-  padding: 9px 10px;
-  font-size: 0.72rem;
-  color: var(--ink-soft);
+  padding: 4px 10px 8px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--ink);
   border-left: 1px dashed var(--line);
   font-variant-numeric: tabular-nums;
 }
-.pm__month b { display: block; font-size: 0.92rem; color: var(--ink); font-weight: 700; }
 
 /* 주요 일정 */
 .pm__row[data-lane="key"] .pm__label span { background: var(--ink); color: var(--bg-card); }
@@ -495,16 +543,16 @@ figcaption { font-size: var(--step--1); color: var(--ink-mute); margin-top: 10px
   margin: 10px 0 0;
   text-align: center;
 }
-@media (min-width: 1100px) { .pm-hint { display: none; } }
+@media (min-width: 2600px) { .pm-hint { display: none; } }
 
 /* ---------- 결정 카드 ---------- */
 
 .decision {
-  background: var(--bg-card);
-  border: 1px solid var(--line);
+  background: var(--sec-bg, var(--bg-sunk));
+  border: 0;
   border-radius: var(--radius);
-  padding: clamp(20px, 4vw, 30px);
-  margin-block: 20px;
+  padding: clamp(22px, 4vw, 34px);
+  margin-block: 18px;
 }
 .decision__q {
   font-weight: 700;
@@ -517,12 +565,14 @@ figcaption { font-size: var(--step--1); color: var(--ink-mute); margin-top: 10px
 /* ---------- 토글 ---------- */
 
 details {
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 0 18px;
-  margin-block: 14px;
-  background: var(--bg-card);
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  background: none;
 }
+details:first-of-type { border-top: 1px solid var(--line); }
 summary {
   cursor: pointer;
   padding: 15px 0;
@@ -536,13 +586,13 @@ summary {
 summary::-webkit-details-marker { display: none; }
 summary::before {
   content: "+";
-  color: var(--accent);
+  color: var(--sec-ink, var(--accent));
   font-weight: 700;
   width: 14px;
   flex: none;
 }
 details[open] summary::before { content: "−"; }
-details[open] summary { border-bottom: 1px solid var(--line); }
+details[open] summary { border-bottom: 0; }
 .details__body { padding: 16px 0 18px; font-size: var(--step--1); }
 .details__body ul { margin: 0; padding-left: 20px; }
 .details__body li { margin-bottom: 7px; }
@@ -651,3 +701,345 @@ blockquote p:last-child { margin-bottom: 0; }
 
 body[data-mode="final"] .todo,
 body[data-mode="final"] .ph { display: none; }
+
+/* ============================================================
+   섹션마다 브랜드 색을 하나씩 — 맵에만 갇혀 있던 4색을 본문으로
+   HTML은 건드리지 않고 섹션 id 로만 지정합니다.
+   ============================================================ */
+
+#about   { --sec: var(--brand-teal); --sec-ink: #2F7360; --sec-bg: #ECF5F2; }
+#space   { --sec: var(--brand-tan);  --sec-ink: #7A6540; --sec-bg: #F6F2E9; }
+#process { --sec: var(--teal-deep);  --sec-ink: #246253; --sec-bg: #E6F0EC; }
+#iksan   { --sec: var(--tan-deep);   --sec-ink: #6A5833; --sec-bg: #F0EBE0; }
+#credits { --sec: var(--cool-gray);  --sec-ink: var(--ink-soft); --sec-bg: var(--bg-sunk); }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) #about   { --sec-ink: #92CBB8; --sec-bg: #15241F; }
+  :root:not([data-theme="light"]) #space   { --sec-ink: #CFB893; --sec-bg: #262117; }
+  :root:not([data-theme="light"]) #process { --sec-ink: #7FBFA9; --sec-bg: #13221F; }
+  :root:not([data-theme="light"]) #iksan   { --sec-ink: #BCA47A; --sec-bg: #221E15; }
+  :root:not([data-theme="light"]) #credits { --sec-bg: var(--bg-sunk); }
+}
+
+/* 섹션 머리의 색 띠 — 어느 장에 있는지 한눈에 */
+section[id] .part-label {
+  color: var(--sec-ink, var(--accent));
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+section[id] .part-label::before {
+  content: "";
+  width: 34px;
+  height: 5px;
+  border-radius: 100px;
+  background: var(--sec, var(--accent));
+  flex: none;
+}
+
+section[id] .decision__q { color: var(--sec-ink, var(--accent)); }
+section[id] blockquote { border-left-color: var(--sec, var(--accent)); }
+section[id] .stat { background: var(--sec-bg, var(--bg-sunk)); }
+section[id] .stat__num { color: var(--sec-ink, var(--accent)); }
+section[id] .question { background: var(--sec-bg, var(--accent-sunk)); }
+section[id] .question__q { color: var(--sec-ink, var(--accent)); }
+section[id] .badge { background: var(--sec-ink, var(--accent)); }
+section[id] .timeline__item[data-mark="on"]::before {
+  background: var(--sec, var(--accent));
+  border-color: var(--sec, var(--accent));
+}
+section[id] a { text-decoration-color: color-mix(in srgb, var(--sec) 70%, transparent); }
+section[id] a:hover { text-decoration-color: var(--sec-ink); }
+
+/* 카드 안의 카드는 바탕을 흰색으로 빼서 층을 만든다 */
+.decision .decision,
+.question .decision { background: var(--bg-card); }
+
+/* ---------- 인용을 디자인의 한 장면으로 ---------- */
+
+blockquote {
+  margin: clamp(28px, 4vw, 44px) 0;
+  padding: 0 0 0 clamp(20px, 3vw, 30px);
+  border-left-width: 4px;
+  font-size: var(--step-1);
+  line-height: 1.48;
+  color: var(--ink);
+  letter-spacing: -0.015em;
+}
+blockquote .muted { font-size: var(--step--1); letter-spacing: 0; }
+
+/* ---------- 히어로 ---------- */
+
+.hero__title { max-width: 14em; }
+.hero__slogan {
+  font-size: clamp(1.3rem, 1.1rem + 0.9vw, 1.9rem);
+  color: var(--ink);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.hero__lede { font-size: var(--step-1); line-height: 1.55; max-width: 30em; }
+
+/* ---------- 섹션 사이는 선 대신 여백으로 ---------- */
+
+section[id] + section[id] { position: relative; }
+section[id] + section[id]::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: min(100% - 40px, var(--wrap));
+  height: 1px;
+  background: var(--line);
+}
+
+/* ============================================================
+   사진·영상·숫자는 본문보다 넓게 — 글은 읽기 좋은 폭을 지키고
+   시각 요소만 여백으로 꺼내 화면에 리듬을 만듭니다.
+   (글이 든 카드 그리드는 제외: :has(.ph) 로 이미지가 든 것만 고름)
+   ============================================================ */
+
+@media (min-width: 900px) {
+  .wrap > figure,
+  .wrap > .video,
+  .wrap > .grid-2:has(.ph),
+  .wrap > .grid-3:has(.ph),
+  .wrap > .grid-2:has(img),
+  .wrap > .grid-3:has(img) {
+    width: min(1120px, calc(100vw - 56px));
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .wrap > .stats {
+    width: min(880px, calc(100vw - 56px));
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* 넓어진 만큼 사진 자리도 키운다 */
+  .wrap > figure > .ph[data-ratio="16-9"] { min-height: 420px; }
+
+  /* 설명글은 본문 폭에 맞춰 왼쪽으로 */
+  .wrap > figure > figcaption {
+    max-width: 680px;
+    margin-inline: auto;
+  }
+}
+
+/* 가로 스크롤이 생기지 않도록 */
+body { overflow-x: clip; }
+
+/* 영상 크레딧 — 넓어진 영상 아래, 본문 폭에 맞춰 */
+.vcredit {
+  max-width: 680px;
+  margin: 14px auto 0;
+  line-height: 1.5;
+}
+
+/* 넓어진 영상에 맞춰 재생 버튼도 키운다 (영상 폭의 약 9%) */
+@media (min-width: 900px) {
+  .video__play { width: 92px; height: 92px; font-size: 30px; }
+  .video__btn { gap: 18px; font-size: var(--step-1); }
+}
+.video__play { transition: transform .18s ease, background-color .18s ease; }
+.video__btn:hover .video__play { transform: scale(1.07); }
+.video__btn:not(:disabled) { text-shadow: 0 1px 12px rgba(0,0,0,.45); color: #fff; }
+.video__btn:not(:disabled):hover { color: #fff; }
+
+/* 썸네일 위 영상 제목은 화면에서 숨긴다.
+   지우지 않고 숨기는 이유: 버튼에 이름이 없으면 스크린리더가
+   "버튼"이라고만 읽어서, 눈으로 안 보는 사람은 무엇을 누르는지 알 수 없다. */
+.video__btn > span:not(.video__play) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ---------- 만든 이들의 이야기 ---------- */
+
+.iv {
+  margin-block: 44px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.iv .video { margin-block: 0; }
+.iv__text > :first-child { margin-top: 0; }
+.iv__n {
+  font-size: var(--step--1);
+  letter-spacing: .08em;
+  color: var(--sec-ink, var(--ink-mute));
+  margin-bottom: 4px;
+}
+.iv__text h4 { margin: 0 0 14px; font-size: var(--step-1); }
+.iv__q {
+  color: var(--ink-soft);
+  font-size: var(--step--1);
+  padding-left: 14px;
+  border-left: 3px solid var(--sec, var(--line));
+}
+.iv__quote { font-size: var(--step-0); }
+.iv__who {
+  font-size: var(--step--1);
+  color: var(--ink-mute);
+  margin-top: 10px;
+}
+
+@media (min-width: 900px) {
+  .wrap > .iv {
+    width: min(1120px, calc(100vw - 56px));
+    margin-left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+    gap: 40px;
+    align-items: center;
+  }
+}
+.iv__sub {
+  font-size: var(--step-0);
+  color: var(--ink-soft);
+  margin: -8px 0 16px;
+}
+/* 인터뷰 영상은 브랜드 영상보다 작으므로 재생 버튼도 줄인다 */
+.iv .video__play { width: 64px; height: 64px; font-size: 22px; }
+
+/* 자료가 있는 단계는 눌러서 원본으로 간다 (원본 맵의 QR 코드 자리) */
+a.pm__item {
+  display: block;
+  position: relative;
+  padding-right: 22px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: box-shadow .15s ease, transform .15s ease;
+}
+a.pm__item:hover,
+a.pm__item:focus-visible {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .13);
+  transform: translateY(-1px);
+}
+a.pm__item:hover b { text-decoration: underline; text-underline-offset: 2px; }
+/* 원본 맵의 QR 코드 자리 — 누를 수 있다는 게 보이도록 작은 단추로 만듭니다 */
+.pm__doc {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.64rem;
+  font-weight: 700;
+  line-height: 17px;
+  text-align: center;
+}
+a.pm__item:hover .pm__doc,
+a.pm__item:focus-visible .pm__doc { background: var(--ink); }
+/* 화살표 안내는 화면 너비와 상관없이 늘 보여야 한다 */
+.pm-note {
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+  margin: 8px 0 0;
+  text-align: center;
+}
+.pm-hint__mark {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.64rem;
+  line-height: 17px;
+  text-align: center;
+  vertical-align: -3px;
+}
+
+/* ---------- 브랜드 픽토그램 ---------- */
+/* 가이드라인 3.1 — 지정된 원본을 그대로 씁니다. 크기만 조절하고 모양은 건드리지 않습니다. */
+.pict {
+  display: block;
+  width: 60px;
+  height: auto;
+  margin-bottom: 14px;
+}
+@media (min-width: 900px) { .pict { width: 76px; } }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .pict { filter: invert(1); }
+}
+
+/* ---------- 지정서체 적용 ---------- */
+/* 가이드라인 2.5.1 — 고운돋움은 '제목용'. 본문은 2.5.2 에 따라 Pretendard 를 씁니다.
+   고운돋움은 Regular 한 벌뿐이라, 가짜 굵게가 생기지 않도록 400 으로 고정합니다. */
+h1, h2, h3,
+.hero__title, .hero__slogan,
+.stat__num, .question__q, .decision__q, .iv__text h4 {
+  font-family: var(--font-title);
+  font-weight: 400;
+}
+.hero__title { letter-spacing: -0.01em; }
+
+/* 영문 눈썹글·라벨·슬로건 영문은 Pretendard 그대로 둡니다 */
+.hero__eyebrow, .hero__slogan-en, .part-label, .pm__year, .pm__month, .pm__date {
+  font-family: var(--font-body);
+}
+
+/* ---------- 로고 ---------- */
+/* 가이드라인 2.3 — 원본 그대로. 크기만 조절하고 색·비율·여백 규칙은 지킵니다.
+   2.3.2 최소 여백은 로고 높이의 1/9(X). 아래 padding 이 그 값보다 넉넉합니다. */
+.nav__home img { display: block; height: 34px; width: auto; }
+@media (min-width: 720px) { .nav__home img { height: 38px; } }
+.foot__logo {
+  display: block;
+  height: 54px;
+  width: auto;
+  margin-bottom: 20px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .nav__home img,
+  :root:not([data-theme="light"]) .foot__logo { filter: invert(1); }
+}
+
+/* ---------- 문의 ---------- */
+.contact { list-style: none; margin: 0 0 18px; padding: 0; }
+.contact li { margin-bottom: 6px; }
+.contact span {
+  display: inline-block;
+  min-width: 62px;
+  color: var(--ink-mute);
+  font-size: var(--step--1);
+}
+
+/* ---------- 푸터의 두 브랜드 ---------- */
+.foot__brands {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+.foot__brands .foot__logo { margin-bottom: 0; }
+.foot__org img { display: block; height: 20px; width: auto; }
+.foot a { color: inherit; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .foot__org img { filter: invert(1); }
+}
+
+/* ---------- 원본 프로세스 맵 ---------- */
+.mapfig img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+}
+.mapfig a:hover img { border-color: var(--accent); }
+.mapfig figcaption a { white-space: nowrap; }

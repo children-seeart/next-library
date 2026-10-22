@@ -29,7 +29,10 @@
 <nav class="nav" id="nav">
   <div class="wrap">
     <div class="nav__bar">
-      <a class="nav__home" href="#top">내일의 어린이실</a>
+      <a class="nav__home" href="#top">
+        <img src="assets/img/brand/primary.png" alt="내일의 어린이실"
+             width="1487" height="640">
+      </a>
       <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navList">목차</button>
     </div>
     <ul class="nav__list" id="navList" hidden></ul>
@@ -74,6 +77,7 @@
      ============================================================ -->
 <section id="about">
   <div class="wrap">
+    <img class="pict" src="assets/img/pictogram/explore.png" alt="탐색하는 어린이" width="497" height="496" loading="lazy">
     <p class="part-label">Part 1</p>
     <h2>내일의 어린이실이란</h2>
 
@@ -93,18 +97,16 @@
     </div>
 
     <h3>프로젝트 영상</h3>
-    <!-- TODO: YouTube 영상 ID를 data-id 에 입력하면 클릭 시 재생됩니다 (예: data-id="dQw4w9WgXcQ") -->
-    <div class="video" data-id="">
+    <div class="video" data-id="6D1yo-5r82I">
       <button class="video__btn" type="button">
         <span class="video__play" aria-hidden="true">▶</span>
         <span>브랜드 영상 (2025)</span>
       </button>
     </div>
-    <div class="todo">
-      <strong>준비 필요</strong>
-      <p>브랜드 영상을 YouTube에 <b>‘일부공개(Unlisted)’</b>로 올린 뒤, 위 <code>data-id</code>에 영상 ID를 넣으세요.
-      ID는 주소 <code>youtu.be/<b>XXXXXXXXXXX</b></code> 의 뒷부분입니다.</p>
-    </div>
+    <p class="muted vcredit">
+      어린이들의 목소리가 담겨 있습니다. 소리를 켜고 보시길 권합니다.<br>
+      영상 기획·제작 스튜디오 펩스 · 음악 이제인 · 촬영 협조 두정도서관 내일의 어린이실 운영팀
+    </p>
 
     <h3>무엇을 다르게 했나</h3>
     <p>
@@ -151,7 +153,8 @@
      ============================================================ -->
 <section id="space">
   <div class="wrap">
-    <p class="part-label">Part 2 — 천안두정도서관</p>
+    <img class="pict" src="assets/img/pictogram/make.png" alt="무언가를 만드는 어린이" width="497" height="496" loading="lazy">
+    <p class="part-label">Part 2</p>
     <h2>어린이들의 작업실</h2>
 
     <p class="lede">
@@ -280,8 +283,9 @@
      ============================================================ -->
 <section id="process">
   <div class="wrap">
-    <p class="part-label">Part 3 — 천안두정도서관</p>
-    <h2>만들어지기까지</h2>
+    <img class="pict" src="assets/img/pictogram/write.png" alt="글을 쓰는 어린이" width="497" height="496" loading="lazy">
+    <p class="part-label">Part 3</p>
+    <h2>#1 천안두정도서관</h2>
 
     <p class="lede">
       천안두정도서관 어린이실은 공모에서 개관까지 약 1년 3개월이 걸렸습니다.
@@ -299,6 +303,54 @@
   <div class="wrap-wide pm-outer">
     <div class="pm">
       <div class="pm__inner">
+        <!-- 시간 축 -->
+        <div class="pm__axis">
+          <div class="pm__label"><span>2023 — 2024</span></div>
+          <div class="pm__scale">
+            <div class="pm__years">
+              <div class="pm__year" style="grid-column:1/span 2">2023</div>
+              <div class="pm__year" style="grid-column:3/span 12">2024</div>
+            </div>
+            <div class="pm__months">
+              <div class="pm__month">11월</div>
+              <div class="pm__month">12월</div>
+              <div class="pm__month">1월</div>
+              <div class="pm__month">2월</div>
+              <div class="pm__month">3월</div>
+              <div class="pm__month">4월</div>
+              <div class="pm__month">5월</div>
+              <div class="pm__month">6월</div>
+              <div class="pm__month">7월</div>
+              <div class="pm__month">8월</div>
+              <div class="pm__month">9월</div>
+              <div class="pm__month">10월</div>
+              <div class="pm__month">11월</div>
+              <div class="pm__month">12월</div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- 주요 일정 -->
+        <div class="pm__row" data-lane="key">
+          <div class="pm__label"><span>주요 일정</span></div>
+          <div class="pm__track">
+            <div class="pm__item" style="grid-column:1">
+              <span class="pm__date">23.11.30</span><b>천안두정도서관 선정 및 킥오프</b></div>
+            <div class="pm__item" style="grid-column:3">
+              <span class="pm__date">24.1.16</span><b>천안두정도서관 × 재단법인 씨앗 협약식</b></div>
+            <div class="pm__item" style="grid-column:4">
+              <span class="pm__date">24.2.14</span><b>공간 기획 방향 확정</b></div>
+            <a class="pm__item" style="grid-column:8" href="https://drive.google.com/file/d/11OO0rODqw20eT6rqsKB_iAWFgUFYIogH/view" target="_blank" rel="noopener" title="최종 설계안 보기">
+              <span class="pm__date">24.6.13</span><b>최종 설계안 확정</b><span class="pm__doc" aria-hidden="true">↗</span></a>
+            <a class="pm__item" style="grid-column:10" href="https://playfund.notion.site/1a5dcffecb7580a099eafd31f27e5edc" target="_blank" rel="noopener" title="13가지 주제의 큐레이션 목록 보기">
+              <span class="pm__date">24.8.16</span><b>콘텐츠 리스트 확정</b><span class="pm__doc" aria-hidden="true">↗</span></a>
+            <div class="pm__item" style="grid-column:13">
+              <span class="pm__date">24.11.30</span><b>베타테스트</b></div>
+            <div class="pm__item" data-open style="grid-column:14">
+              <span class="pm__date">24.12.20</span><b>내일의 어린이실 개관</b></div>
+          </div>
+        </div>
 
         <!-- 이용자 리서치 -->
         <div class="pm__row" data-lane="research">
@@ -315,9 +367,9 @@
             <div class="pm__item" style="grid-column:4">
               <span class="pm__date">24.2.14</span><b>리서치 결과 도출</b>
               <span class="pm__sub">어린이실 기획 방향 확정</span></div>
-            <div class="pm__item" style="grid-column:4">
-              <span class="pm__date">24.2.22–24</span><b>공간 기획 워크숍</b>
-              <span class="pm__sub">Discover workshop · 프로토타이핑</span></div>
+            <a class="pm__item" style="grid-column:4" href="https://playfund.notion.site/1acdcffecb7580d09ed4c4c47feb308e" target="_blank" rel="noopener" title="공간 기획 워크숍 기록 보기">
+              <span class="pm__date">24.2.22–24</span><b>공간 기획 워크숍</b><span class="pm__doc" aria-hidden="true">↗</span>
+              <span class="pm__sub">Discover workshop · 프로토타이핑</span></a>
             <div class="pm__item" style="grid-column:8">
               <span class="pm__date">24.6.10</span><b>설계안 공유회</b>
               <span class="pm__sub">천안시장 참석</span></div>
@@ -335,10 +387,10 @@
             <div class="pm__item" style="grid-column:4">
               <span class="pm__date">24.2.24</span><b>Discover workshop 참여</b>
               <span class="pm__sub">프로토타이핑</span></div>
-            <div class="pm__item" style="grid-column:5">
-              <span class="pm__date">24.3.18</span><b>디자인 원칙 및 요구사항 전달</b></div>
-            <div class="pm__item" style="grid-column:5">
-              <span class="pm__date">24.3.27</span><b>디자인 방향 기획 · 1차 layout</b></div>
+            <a class="pm__item" style="grid-column:5" href="https://drive.google.com/file/d/1eS-6IXIwAlA48MlXTmBi0EnM-phGdbpV/view" target="_blank" rel="noopener" title="디자인 원칙 및 요구사항 보기">
+              <span class="pm__date">24.3.18</span><b>디자인 원칙 및 요구사항 전달</b><span class="pm__doc" aria-hidden="true">↗</span></a>
+            <a class="pm__item" style="grid-column:5" href="https://drive.google.com/file/d/1tIyGL_MhYG_huVtNOvCQrihiTXVcnIH7/view" target="_blank" rel="noopener" title="디자인 방향 보기">
+              <span class="pm__date">24.3.27</span><b>디자인 방향 기획 · 1차 layout</b><span class="pm__doc" aria-hidden="true">↗</span></a>
             <div class="pm__item" style="grid-column:6/span 2">
               <span class="pm__date">24.4.25–5.31</span><b>layout 최종 확정</b>
               <span class="pm__sub">세부 공간 요소 디자인 · 가구 배치</span></div>
@@ -357,55 +409,13 @@
           </div>
         </div>
 
-        <!-- 시간 축 -->
-        <div class="pm__axis">
-          <div class="pm__label"><span>2023 — 2024</span></div>
-          <div class="pm__months">
-            <div class="pm__month">2023<b>11월</b></div>
-            <div class="pm__month"><b>12월</b></div>
-            <div class="pm__month">2024<b>1월</b></div>
-            <div class="pm__month"><b>2월</b></div>
-            <div class="pm__month"><b>3월</b></div>
-            <div class="pm__month"><b>4월</b></div>
-            <div class="pm__month"><b>5월</b></div>
-            <div class="pm__month"><b>6월</b></div>
-            <div class="pm__month"><b>7월</b></div>
-            <div class="pm__month"><b>8월</b></div>
-            <div class="pm__month"><b>9월</b></div>
-            <div class="pm__month"><b>10월</b></div>
-            <div class="pm__month"><b>11월</b></div>
-            <div class="pm__month"><b>12월</b></div>
-          </div>
-        </div>
-
-        <!-- 주요 일정 -->
-        <div class="pm__row" data-lane="key">
-          <div class="pm__label"><span>주요 일정</span></div>
-          <div class="pm__track">
-            <div class="pm__item" style="grid-column:1">
-              <span class="pm__date">23.11.30</span><b>천안두정도서관 선정 및 킥오프</b></div>
-            <div class="pm__item" style="grid-column:3">
-              <span class="pm__date">24.1.16</span><b>천안두정도서관 × 재단법인 씨앗 협약식</b></div>
-            <div class="pm__item" style="grid-column:4">
-              <span class="pm__date">24.2.14</span><b>공간 기획 방향 확정</b></div>
-            <div class="pm__item" style="grid-column:8">
-              <span class="pm__date">24.6.13</span><b>최종 설계안 확정</b></div>
-            <div class="pm__item" style="grid-column:10">
-              <span class="pm__date">24.8.16</span><b>콘텐츠 리스트 확정</b></div>
-            <div class="pm__item" style="grid-column:13">
-              <span class="pm__date">24.11.30</span><b>베타테스트</b></div>
-            <div class="pm__item" data-open style="grid-column:14">
-              <span class="pm__date">24.12.20</span><b>내일의 어린이실 개관</b></div>
-          </div>
-        </div>
-
         <!-- 콘텐츠 -->
         <div class="pm__row" data-lane="content">
           <div class="pm__label"><span>콘텐츠</span></div>
           <div class="pm__track">
-            <div class="pm__item" style="grid-column:4/span 2">
-              <span class="pm__date">24.2–3</span><b>책 콘텐츠: 사전 데이터 분석</b>
-              <span class="pm__sub">대출 데이터 · 장서 데이터</span></div>
+            <a class="pm__item" style="grid-column:4/span 2" href="https://drive.google.com/file/d/1TVbXcUAC90JMrBDMu-f4WhH07tiDbnLG/view" target="_blank" rel="noopener" title="큐레이션 기획을 위한 데이터 분석 자료 보기">
+              <span class="pm__date">24.2–3</span><b>책 콘텐츠: 사전 데이터 분석</b><span class="pm__doc" aria-hidden="true">↗</span>
+              <span class="pm__sub">대출 데이터 · 장서 데이터</span></a>
             <div class="pm__item" style="grid-column:4">
               <span class="pm__date">24.2.15–16</span><b>1차 레퍼런스 투어</b>
               <span class="pm__sub">울산</span></div>
@@ -458,9 +468,9 @@
             <div class="pm__item" style="grid-column:11/span 2">
               <span class="pm__date">24.9–10.10</span><b>어린이 화장실 분리 환경 개선 공사</b>
               <span class="pm__sub">비가림 시설 교체</span></div>
-            <div class="pm__item" style="grid-column:12">
-              <span class="pm__date">24.10.10–24</span><b>3–5차 운영준비 워크숍</b>
-              <span class="pm__sub">운영원칙 · 이용원칙 수립</span></div>
+            <a class="pm__item" style="grid-column:12" href="https://playfund.notion.site/1a5dcffecb75804e8995d02ea529e59d" target="_blank" rel="noopener" title="운영준비 워크숍 결과 보기">
+              <span class="pm__date">24.10.10–24</span><b>3–5차 운영준비 워크숍</b><span class="pm__doc" aria-hidden="true">↗</span>
+              <span class="pm__sub">운영원칙 · 이용원칙 수립</span></a>
             <div class="pm__item" style="grid-column:13">
               <span class="pm__date">24.11</span><b>대출 서가 도서 재배치</b></div>
             <div class="pm__item" style="grid-column:13">
@@ -477,16 +487,21 @@
       </div>
     </div>
     <p class="pm-hint">← 옆으로 넘기면 전체 과정을 볼 수 있습니다 →</p>
+    <p class="pm-note"><b class="pm-hint__mark" aria-hidden="true">↗</b> 우상단 화살표 표시를 누르면 해당 단계의 결과물을 보실 수 있습니다</p>
   </div>
 
   <div class="wrap">
-    <div class="todo">
-      <strong>원본 이미지도 함께</strong>
-      <p>위 표는 「함께 걸어온 길」 프로세스 맵의 내용을 웹으로 옮긴 것입니다.
-      원본 이미지에는 각 단계의 <b>현장 사진</b>과 <b>공유회에서 나온 발언</b>이 함께 담겨 있으니,
-      <code>assets/img/cheonan/process-map.jpg</code>로 넣고 “원본 크게 보기” 링크를 달면 좋겠습니다.
-      사진을 받으면 각 항목에 작은 썸네일도 붙일 수 있습니다.</p>
-    </div>
+    <figure class="mapfig">
+      <a href="assets/img/cheonan/process-map.jpg" target="_blank" rel="noopener">
+        <img src="assets/img/cheonan/process-map-view.jpg" width="1700" height="472" loading="lazy"
+             alt="「함께 걸어온 길」 원본 프로세스 맵. 이용자 리서치·공간·콘텐츠·운영 준비 네 갈래의 일정이 월별로 놓여 있고, 각 단계에 현장 사진과 공유회에서 나온 말이 함께 담겨 있습니다.">
+      </a>
+      <figcaption>
+        전시 ≪오늘의 어린이, 내일의 어린이실≫에 걸렸던 원본 「함께 걸어온 길」입니다.
+        위의 표에는 없는 현장 사진과 공유회에서 나온 말이 함께 담겨 있습니다.
+        <a href="assets/img/cheonan/process-map.jpg" target="_blank" rel="noopener">원본 크게 보기 →</a>
+      </figcaption>
+    </figure>
 
     <h3>몇 가지 결정</h3>
     <p>
@@ -549,19 +564,82 @@
     <h3>만든 이들의 이야기</h3>
     <p>
       이 결정들은 각자의 자리에서 어린이를 먼저 생각한 사람들이 내린 것입니다.
-      공간, 조명, 그래픽, 콘텐츠, 운영 — 전문가들이 무엇을 보고 무엇을 고민했는지 전합니다.
+      리서치·공간·콘텐츠·운영을 맡은 사람들이 무엇을 보고 무엇을 고민했는지,
+      네 편의 인터뷰 영상에 담았습니다.
     </p>
-    <p>
-      <a href="https://playfund.notion.site/215dcffecb758020af2ddf2234e32f3b" target="_blank" rel="noopener">
-        ≪오늘의 어린이, 내일의 어린이실≫ 전시 아카이브에서 전문가 인터뷰 보기 →
-      </a>
-    </p>
-    <div class="todo">
-      <strong>결정 필요</strong>
-      <p>전문가 인터뷰를 이 페이지로 옮겨올지, 지금처럼 링크만 걸지 정하세요.
-      옮겨온다면 <b>공간·조명·그래픽·콘텐츠·운영에서 한 사람씩, 한 문단씩만</b> 뽑는 걸 권합니다.
-      전문을 다 실으면 과정 섹션이 길어져 프로세스 맵의 힘이 죽습니다.</p>
+
+    <div class="iv">
+      <div class="video" data-id="--9Xgisf7Vc">
+        <button class="video__btn" type="button">
+          <span class="video__play" aria-hidden="true">▶</span>
+          <span>인터뷰 1 — 매일의 경험</span>
+        </button>
+      </div>
+      <div class="iv__text">
+        <p class="iv__n">인터뷰 1</p>
+        <h4>매일의 경험</h4>
+        <p class="iv__sub">어린이들의 경험과 콘텐츠</p>
+        <p class="iv__q">“내일의 어린이실은 기존의 어린이실과 어떻게 다른가요? 어떤 경험을 하나요?”</p>
+        <p class="iv__quote">“책뿐 아니라 재료, 도구, 어린이들이 만든 작업물과 글까지 어린이들에게 영감의 재료가 되는 모든 것을 내일의 어린이실 콘텐츠라고 합니다.”</p>
+        <p class="iv__who">재단법인 씨앗 · 내일의 어린이실 운영팀</p>
+      </div>
     </div>
+
+    <div class="iv">
+      <div class="video" data-id="NweQcEIQa7E">
+        <button class="video__btn" type="button">
+          <span class="video__play" aria-hidden="true">▶</span>
+          <span>인터뷰 2 — 아름다운 공간</span>
+        </button>
+      </div>
+      <div class="iv__text">
+        <p class="iv__n">인터뷰 2</p>
+        <h4>아름다운 공간</h4>
+        <p class="iv__sub">공간 기획의 의도</p>
+        <p class="iv__q">“공간을 기획할 때 가장 중요했던 점은 무엇인가요?”</p>
+        <p class="iv__quote">“공간을 디자인한다는 것은 공간의 질서를 새로이 만드는 것이라고 생각합니다. 예컨대 선과 선이, 선들이 만들어내는 면과 면이 어떻게 결합해서 안정감 있는 시각적 프레임을 만들어줄 것이냐 같은 것들입니다.”</p>
+        <p class="iv__who">어린이 자문단 · 더퍼스트펭귄 공간팀</p>
+      </div>
+    </div>
+
+    <div class="iv">
+      <div class="video" data-id="LMvsBCrRzis">
+        <button class="video__btn" type="button">
+          <span class="video__play" aria-hidden="true">▶</span>
+          <span>인터뷰 3 — 오늘의 어린이</span>
+        </button>
+      </div>
+      <div class="iv__text">
+        <p class="iv__n">인터뷰 3</p>
+        <h4>오늘의 어린이</h4>
+        <p class="iv__sub">어린이와 함께 만든 과정</p>
+        <p class="iv__q">“어린이를 위한 공간. 어떤 과정을 통해 기획되었나요?”</p>
+        <p class="iv__quote">“우리가 지금 무엇을 바꾸려고 하는지, 각자가 이미 갖고 있던 생각보다 어린이를 진짜 위하는 게 뭔지 생각해 보는 과정이었어요.”</p>
+        <p class="iv__who">위오랩스 리서치팀 · 내일의 어린이실 운영팀</p>
+      </div>
+    </div>
+
+    <div class="iv">
+      <div class="video" data-id="NNsTYQFrg_M">
+        <button class="video__btn" type="button">
+          <span class="video__play" aria-hidden="true">▶</span>
+          <span>인터뷰 4 — 협업의 기쁨</span>
+        </button>
+      </div>
+      <div class="iv__text">
+        <p class="iv__n">인터뷰 4</p>
+        <h4>협업의 기쁨</h4>
+        <p class="iv__sub">참여한 모든 팀이 함께한 과정</p>
+        <p class="iv__q">“함께 만드는 과정은 어땠나요?”</p>
+        <p class="iv__quote">“결정하고 소통하는 날들이 연속이었어요. 도서관의 모든 분께서 좋은 공간을 만들려는 통합적인 시선에서 함께 이해해 주시고 도움을 주셨어요.”</p>
+        <p class="iv__who">위오랩스 리서치팀 · 더퍼스트펭귄 공간팀 · 내일의 어린이실 운영팀 · 어린이 자문단</p>
+      </div>
+    </div>
+
+    <p class="muted vcredit">
+      네 편의 인터뷰는 2025년 ≪오늘의 어린이, 내일의 어린이실≫ 전시를 위해 제작되었습니다.
+      <a href="https://playfund.notion.site/215dcffecb758020af2ddf2234e32f3b" target="_blank" rel="noopener">전시 아카이브 보기 →</a>
+    </p>
 
     <h3>조성 과정 주요 자료</h3>
     <details>
@@ -598,190 +676,6 @@
 </section>
 
 
-<!-- ============================================================
-     PART 2-3 — 개관 이후 ★ 차별화 섹션
-     ============================================================ -->
-<section id="after">
-  <div class="wrap">
-    <p class="part-label">Part 4 — 천안두정도서관</p>
-    <h2>개관 이후, 지금까지</h2>
-
-    <p class="lede">
-      공간은 열리는 순간부터 달라지기 시작합니다. 2024년 12월 문을 연 뒤
-      매일 어린이들을 관찰해 기록했고, 한 달에 한 번 운영팀과 재단이 그 기록을 함께 읽어 왔습니다.
-      계획대로 된 것과 그렇지 않은 것, 그리고 그 사이에서 바꾼 것들입니다.
-    </p>
-
-    <div class="stats">
-      <div class="stat"><span class="stat__num">6,580</span><span class="stat__label">2025년 한 해 이용 횟수</span></div>
-      <div class="stat"><span class="stat__num">2,286</span><span class="stat__label">어린이를 관찰해 적은 기록</span></div>
-      <div class="stat"><span class="stat__num">1시간 30분</span><span class="stat__label">한 번 올 때 머무는 시간</span></div>
-    </div>
-
-    <h3>오늘이와 내일이</h3>
-    <p>
-      운영자는 직책이 아니라 닉네임으로 불립니다. 지기, 야미, 오디, 조이, 꿈나, 아무, 호시 —
-      ‘꿈나’는 아이들의 꿈을 함께해주는 친구, ‘아무’는 아무거나 해도 괜찮다는 뜻,
-      ‘호시’는 별처럼 길잡이가 되어주고 싶다는 마음에서 지은 이름입니다.
-    </p>
-    <p>
-      어린이실 안에서 운영자는 <b>‘오늘이’</b>, 어린이는 <b>‘내일이’</b>로 불립니다.
-      관찰 기록에는 이런 문장이 남아 있습니다.
-    </p>
-    <blockquote>
-      <p>“어떤 이야기를 펼쳐낼까 궁금해지는 내일이.”</p>
-    </blockquote>
-
-    <h3>걱정했지만 일어나지 않은 일</h3>
-    <p>
-      공간을 준비하면서 운영팀이 가장 걱정한 것이 두 가지 있었습니다.
-      둘 다 열고 나서 예상과 다르게 흘러갔습니다.
-    </p>
-
-    <div class="decision">
-      <p class="decision__q">대출 서가의 책과 좌석을 줄였는데</p>
-      <p>
-        탐색이 가능한 서가를 만들기 위해 장서량과 좌석 수를 줄여야 했습니다.
-        민원이 들어올 것이라 예상했지만, <b>관련 민원은 들어오지 않았습니다.</b>
-        장서를 많이 두는 것보다 양질의 책을 찾기 쉽게 두는 것이 더 중요하다는 것을
-        확인한 셈입니다.
-      </p>
-    </div>
-
-    <div class="decision">
-      <p class="decision__q">‘어린이만 들어갈 수 있는 방’을 두었는데</p>
-      <p>
-        0813 작업실은 8–13세 어린이만 이용할 수 있습니다. 도서관은 누구에게나 열린
-        공간이라는 생각이 강한 만큼 반발을 예상했지만, <b>왜 그래야 하냐는 민원은
-        들어오지 않았습니다.</b> 들어갈 수는 없어도 훤히 들여다보이는 구조,
-        어른도 함께 쓸 수 있는 대출 영역이 옆에 있다는 점,
-        그리고 공간의 의도를 설명한 로비 전시가 함께 작용한 것으로 보입니다.
-      </p>
-    </div>
-
-    <h3>어떤 서가는 잘 됐고, 어떤 서가는 그렇지 않았습니다</h3>
-    <p>
-      2025년 한 해 동안 어린이들이 큐레이션 서가에서 책을 집어 든 횟수를 주제별로 세어 보았습니다.
-      결과는 고르지 않았습니다.
-    </p>
-    <ul class="rank">
-      <li style="--w:100%"><span>심심할 때 뭐해</span><b>737</b></li>
-      <li style="--w:85%"><span>모양이 있는 이야기</span><b>626</b></li>
-      <li style="--w:81%"><span>나의 하루</span><b>595</b></li>
-      <li style="--w:74%"><span>냠냠</span><b>546</b></li>
-      <li style="--w:60%"><span>사건 현장에 초대합니다</span><b>440</b></li>
-      <li style="--w:40%"><span>변하는 것과 사라지는 것</span><b>298</b></li>
-      <li style="--w:37%"><span>움직여 볼까?</span><b>275</b></li>
-      <li style="--w:31%"><span>어린이의 내일</span><b>228</b></li>
-      <li style="--w:28%"><span>떠나자 여행</span><b>210</b></li>
-      <li style="--w:23%"><span>오늘의 세계</span><b>167</b></li>
-      <li style="--w:21%"><span>과학이 만드는 세계</span><b>157</b></li>
-      <li style="--w:20%"><span>자연사 박물관</span><b>151</b></li>
-      <li style="--w:18%"><span>세상의 모든 도감</span><b>135</b></li>
-      <li style="--w:7%" data-dim><span>어린이 곁에 어른</span><b>54</b></li>
-    </ul>
-    <p class="muted">
-      2025년 주제별 이용 횟수. ‘어린이 곁에 어른’은 보호자를 위한 서가라 성격이 다릅니다.
-    </p>
-    <p>
-      <b>만들기로 이어지는 책이 가장 많이 읽혔습니다.</b> ‘심심할 때 뭐해’가 1위인 것은
-      서가와 작업실이 이어져 있기 때문입니다. 형태와 물성이 특이한 책(‘모양이 있는 이야기’)은
-      초반 진입을 돕는 콘텐츠였고, 어린이의 일상과 맞닿은 주제(‘나의 하루’)는 한 해 내내 꾸준했습니다.
-    </p>
-    <p>
-      반면 지식을 전달하는 묵직한 주제들은 손이 덜 갔습니다. ‘오늘의 세계’처럼
-      무게감 있는 주제일수록 <b>매력적으로 다가가는 지점을 따로 설계해야 한다</b>는 것을
-      데이터로 확인했습니다. 도감류는 운영자가 적극적으로 권했을 때 접근도가 올라갔습니다.
-      손이 잘 가지 않는 서가는 책을 솎아내고 여백을 늘리는 중입니다.
-    </p>
-
-    <h3>왜 다시 오는가</h3>
-    <p class="lede">
-      반복 방문의 핵심은 ‘매번 새로운 활동’이 아니라
-      <b>‘스스로 이어갈 것’이 생긴다는 것</b>이었습니다.
-    </p>
-    <p>
-      2년 동안 309번 찾아온 어린이가 있습니다. 작업실을 자기 연구소처럼 쓰면서
-      완성한 작업을 다음 작업으로 계속 전환해 갑니다. 책과 정보를 자기 프로젝트에 맞게
-      자유롭게 불러오고, 운영자를 가르치는 사람이 아니라 함께 탐구하는 사람으로 대합니다.
-    </p>
-    <p>
-      자주 오는 어린이들의 공통점은 다양한 활동을 많이 해보는 것이 아니라,
-      <b>하나를 오래 붙들고 ‘숙련자’가 되어 간다</b>는 점이었습니다.
-      그리고 그렇게 쌓인 작업물은 그 자체로 다른 어린이들이 참고하는
-      레퍼런스가 되고, 호기심을 불러일으키는 환경이 됩니다.
-      중·고학년의 작업 장면이 저학년에게 가장 좋은 교재였습니다.
-    </p>
-
-    <h4>어린이에게 책은 네 가지 일을 했습니다</h4>
-    <div class="grid-2">
-      <div class="decision">
-        <p class="decision__q">만드는 법을 알려주는 설명서</p>
-        <p class="muted">종이접기 책을 보고 긴 시간을 들여 끝내 완성합니다.</p>
-      </div>
-      <div class="decision">
-        <p class="decision__q">눈으로 참고하는 자료</p>
-        <p class="muted">도감에서 새를 찾아 호일로 모형을 만듭니다.</p>
-      </div>
-      <div class="decision">
-        <p class="decision__q">관심사를 더 깊게 만드는 세계</p>
-        <p class="muted">자동차를 좋아하는 어린이가 먼저 “자동차 책은 어디 있어요?”라고 묻습니다.</p>
-      </div>
-      <div class="decision">
-        <p class="decision__q">작업과 상관없이 그냥 읽는 책</p>
-        <p class="muted">작업을 마치고도 더 머물고 싶어 책을 꺼냅니다.</p>
-      </div>
-    </div>
-    <p>
-      기록에 남은 장면 하나. 한 어린이가 친구가 만든 <q>나만의 걱정인형 만들기</q> 책을
-      꼼꼼히 읽고 그대로 따라 만들기 시작했습니다. 바느질이 서툴러 오래 걸렸지만
-      <b>학원 가는 것을 포기하고 끝까지 만들었습니다.</b>
-      어린이가 만든 것이 다음 어린이의 책이 되는 순간입니다.
-    </p>
-
-    <h3>2년차에 달라진 것</h3>
-    <p>
-      시간이 쌓이면서 공간에 대한 인식 자체가 달라졌습니다.
-      2026년 3~6월 학기의 이용 횟수는 직전 학기 대비 <b>37% 늘었고</b>,
-      머문 시간도 369시간 늘었습니다.
-    </p>
-    <ul>
-      <li><b>8세가 더 오래 머뭅니다.</b> 2년차에 접어들며 저학년 보호자들에게 ‘안전한 공간’이라는
-      인식이 생겼고, 작업 도중 그만두는 일이 줄고 몰입도와 주도성이 올라갔습니다.</li>
-      <li><b>중·고학년 비중이 늘었습니다.</b> 10–13세의 이용 비중이 47.3%에서 50.6%로 올랐습니다.
-      경험이 깊어지려면 오래 다니는 어린이가 필요합니다.</li>
-      <li><b>어린이가 서가를 만들기 시작했습니다.</b> 어린이 큐레이터 ‘이끔이’가 직접 책을 골라
-      서가에 놓고, 공간 개선과 즐길 거리를 기획합니다.</li>
-      <li><b>밤에도 엽니다.</b> ‘밤을 품은 내일의 어린이실’을 운영하면서 재방문율이 올라갔습니다.</li>
-    </ul>
-
-    <h3>아직 숙제로 남은 것</h3>
-    <ul>
-      <li>8–13세는 하나로 묶여 불리지만 인생에서 가장 빠르게 자라는 시기입니다.
-      키가 작아도 큰 테이블에 앉고 싶어 하는 어린이가 있고, 고학년이 되어서도
-      작은 공간에 숨어들고 싶어 하는 어린이가 있습니다. <b>더 다양한 높이와 크기의 가구</b>가 필요합니다.</li>
-      <li>저학년이 공간을 많이 차지하면 재료를 탐색하고 꾸미는 작업이 반복됩니다.
-      결과물은 많아지지만 <b>작업의 축적과 대화는 옅어집니다.</b>
-      작업실 경험의 층위를 어떻게 늘릴지가 다음 과제입니다.</li>
-      <li>쌓여 가는 관찰 기록을 <b>어떻게 정리하고 밖으로 보여줄지</b>는 아직 찾는 중입니다.
-      이 페이지도 그 시도 가운데 하나입니다.</li>
-    </ul>
-
-    <div class="todo">
-      <strong>확인 필요</strong>
-      <p>이 섹션은 노션 「월간리뷰 (공유)」의 <b>25년 상반기 리뷰(250715)</b>,
-      <b>25년 종합 리뷰(260115)</b>, <b>26년 3~6월 학기리뷰(260716)</b>,
-      <b>26년 7-8월 방학리뷰</b> 네 건에서 정리했습니다. 확인해 주세요.</p>
-      <ul>
-        <li><b>숫자</b> — 6,580회 / 2,286개 / 1시간 30분 / 309회 / 37% / 369시간 / 47.3→50.6%
-        모두 리뷰 문서의 값입니다. 대외 공개해도 되는지 봐주세요.</li>
-        <li><b>‘오늘이·내일이’ 호칭</b> — 관찰 기록의 용례로 추정했습니다. 맞는지 확인 부탁드립니다.</li>
-        <li><b>어린이 이름은 모두 뺐습니다.</b> 309회 어린이, 걱정인형 어린이 등으로만 적었습니다.</li>
-        <li>민원 관련 두 건은 2025년 5월 기준입니다. 지금도 유효한지 확인이 필요합니다.</li>
-      </ul>
-    </div>
-  </div>
-</section>
 
 <!-- ============================================================
      PART 3 — 익산 (Pre-open)
@@ -789,7 +683,8 @@
      ============================================================ -->
 <section id="iksan">
   <div class="wrap">
-    <p class="part-label">Part 5</p>
+    <img class="pict" src="assets/img/pictogram/sky.png" alt="누워서 하늘을 보는 어린이" width="497" height="496" loading="lazy">
+    <p class="part-label">Part 4</p>
     <span class="badge">Pre-open</span>
     <h2>#2 익산시립모현도서관</h2>
 
@@ -826,7 +721,8 @@
      ============================================================ -->
 <section id="credits">
   <div class="wrap">
-    <p class="part-label">Part 6</p>
+    <img class="pict" src="assets/img/pictogram/talk.png" alt="친구와 대화하는 어린이" width="497" height="496" loading="lazy">
+    <p class="part-label">Part 5</p>
     <h2>맺으며</h2>
 
     <p>
@@ -862,8 +758,12 @@
     <h3>문의</h3>
     <p class="muted">
       내일의 어린이실 프로젝트에 대해 궁금한 점이 있으시면 재단법인 씨앗으로 연락 주세요.
-      <!-- TODO: 공개용 연락처(메일 주소 또는 재단 웹사이트 링크) 삽입 -->
     </p>
+    <ul class="contact">
+      <li><span>메일</span> <a href="mailto:children@see-art.org">children@see-art.org</a></li>
+      <li><span>전화</span> <a href="tel:+820317537090">031-753-7090</a></li>
+      <li><span>홈페이지</span> <a href="https://see-art.org" target="_blank" rel="noopener">see-art.org</a></li>
+    </ul>
   </div>
 </section>
 
@@ -878,7 +778,17 @@
 
 <footer class="foot">
   <div class="wrap">
-    <p>내일의 어린이실 — 프로젝트 아카이브</p>
+    <div class="foot__brands">
+      <img class="foot__logo" src="assets/img/brand/primary.png"
+           alt="내일의 어린이실" width="1487" height="640">
+      <a class="foot__org" href="https://see-art.org" target="_blank" rel="noopener">
+        <img src="assets/img/brand/seeart.png" alt="재단법인 씨앗"
+             width="1926" height="313">
+      </a>
+    </div>
+    <p>프로젝트 아카이브</p>
+    <p>문의 <a href="mailto:children@see-art.org">children@see-art.org</a>
+       · <a href="tel:+820317537090">031-753-7090</a></p>
     <p>본 페이지의 자료에 대한 저작권은 재단법인 씨앗 및 각 전문가팀에게 있으며 무단으로 사용하실 수 없습니다.</p>
     <p>ⓒ 2026 Seeart Foundation</p>
   </div>

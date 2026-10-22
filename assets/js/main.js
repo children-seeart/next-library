@@ -88,8 +88,21 @@
     thumb.className = 'video__thumb';
     thumb.alt = '';
     thumb.loading = 'lazy';
-    thumb.src = 'https://i.ytimg.com/vi/' + id + '/maxresdefault.jpg';
-    thumb.onerror = function () { thumb.src = 'https://i.ytimg.com/vi/' + id + '/hqdefault.jpg'; };
+    /* 영상마다 있는 썸네일 크기가 달라서 큰 것부터 차례로 시도한다 */
+    var sizes = ['maxresdefault', 'sddefault', 'hqdefault'];
+    var si = 0;
+    thumb.src = 'https://i.ytimg.com/vi/' + id + '/' + sizes[si] + '.jpg';
+    thumb.onerror = function () {
+      si += 1;
+      if (si < sizes.length) thumb.src = 'https://i.ytimg.com/vi/' + id + '/' + sizes[si] + '.jpg';
+    };
+    /* 404 는 120x90 회색 이미지로 응답하므로 크기로도 걸러낸다 */
+    thumb.onload = function () {
+      if (thumb.naturalWidth <= 120 && si < sizes.length - 1) {
+        si += 1;
+        thumb.src = 'https://i.ytimg.com/vi/' + id + '/' + sizes[si] + '.jpg';
+      }
+    };
     box.insertBefore(thumb, btn);
 
     btn.addEventListener('click', function () {
