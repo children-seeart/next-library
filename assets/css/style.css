@@ -230,6 +230,8 @@ h2 {
   margin: 0 0 28px;
   max-width: 16em;
 }
+/* 익산은 소제목 없이 바로 본문이 이어지므로 제목과 붙여 줍니다 */
+#iksan h2 { margin-bottom: 12px; }
 h3 {
   font-size: var(--step-1);
   line-height: 1.35;
