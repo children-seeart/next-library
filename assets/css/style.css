@@ -182,7 +182,9 @@ section[id] { padding-block: clamp(40px, 6vw, 72px); }
 
 /* ---------- 히어로 ---------- */
 
-.hero { padding-block: clamp(40px, 9vw, 96px) clamp(32px, 6vw, 64px); }
+.hero { padding-block: clamp(40px, 9vw, 96px) 0; }
+/* 대표 이미지 바로 아래 PART 1 은 위 여백을 줄여 사진과 붙여 줍니다 */
+#about { padding-top: clamp(28px, 4vw, 44px); }
 .hero__eyebrow {
   font-size: var(--step--1);
   letter-spacing: 0.14em;
@@ -262,6 +264,10 @@ p { margin: 0 0 18px; }
   margin: 0 0 22px;
 }
 .question p:last-child { margin-bottom: 0; }
+/* 넓은 화면에서는 질문을 한 줄로 — 휴대폰에서는 자연스럽게 줄바꿈 */
+@media (min-width: 760px) {
+  .question__q { font-size: 1.12rem; letter-spacing: -0.02em; white-space: nowrap; }
+}
 
 /* ---------- 영상 ---------- */
 
@@ -824,7 +830,7 @@ section[id] + section[id]::before {
   .wrap > .grid-3:has(.ph),
   .wrap > .grid-2:has(img),
   .wrap > .grid-3:has(img),
-  .wrap > .swipe {
+  .wrap > .swipe:has(> .grid-3) {
     width: min(920px, calc(100vw - 56px));
     margin-left: 50%;
     transform: translateX(-50%);
@@ -990,6 +996,7 @@ a.pm__item:focus-visible .pm__doc { background: var(--ink); }
   height: auto;
   margin-bottom: 14px;
 }
+@media (max-width: 599px) { .pict { width: 44px; margin-bottom: 10px; } }
 @media (min-width: 900px) { .pict { width: 76px; } }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .pict { filter: invert(1); }
@@ -1088,6 +1095,10 @@ h1, h2, h3,
 }
 .themes__list b { color: var(--ink); margin-right: 3px; }
 /* 넓은 화면에서는 두 단으로 — 13개 주제가 한 화면에 들어오게 */
+/* 휴대폰에서는 주제 이름만 — 설명은 「원본 보기」 이미지에 */
+@media (max-width: 599px) {
+  .themes__list span { display: none; }
+}
 @media (min-width: 760px) {
   .themes__list { columns: 2; column-gap: 32px; }
   .themes__list li { break-inside: avoid; }
@@ -1212,19 +1223,19 @@ h1, h2, h3,
    data-swipe 가 붙은 격자는 좁은 화면에서 한 장씩 옆으로 넘겨 봅니다.
    넓은 화면에서는 그대로 세 장이 나란히 보입니다. */
 .swipe { position: relative; margin-block: 28px; }
-.swipe > .grid-3 { margin-block: 0; }
+.swipe > [data-swipe] { margin-block: 0; }
 .swipe > .slides__arrow,
 .swipe > .slides__dots { display: none; }
 @media (max-width: 599px) {
-  .swipe > .grid-3 {
+  .swipe > [data-swipe] {
     display: flex;
     gap: 10px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
   }
-  .swipe > .grid-3::-webkit-scrollbar { display: none; }
-  .swipe > .grid-3 > img { flex: 0 0 100%; scroll-snap-align: center; }
+  .swipe > [data-swipe]::-webkit-scrollbar { display: none; }
+  .swipe > [data-swipe] > * { flex: 0 0 100%; scroll-snap-align: center; }
   .swipe > .slides__arrow { display: block; top: calc(50% - 11px); }
   .swipe > .slides__dots { display: flex; }
 }

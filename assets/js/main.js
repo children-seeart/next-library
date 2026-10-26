@@ -217,10 +217,10 @@
     }
   });
 
-  /* 사진 격자 넘겨보기 — 휴대폰에서만 보이는 화살표와 점을 달아 줍니다.
+  /* 넘겨보기 (사진 격자, 인터뷰) — 휴대폰에서만 보이는 화살표와 점을 달아 줍니다.
      넘기는 동작은 CSS 스크롤 스냅이 맡고, 여기서는 버튼과 점만 맞춥니다. */
-  Array.prototype.forEach.call(document.querySelectorAll('.grid-3[data-swipe]'), function (grid) {
-    var imgs = grid.querySelectorAll('img');
+  Array.prototype.forEach.call(document.querySelectorAll('[data-swipe]'), function (grid) {
+    var imgs = grid.children;
     if (imgs.length < 2) return;
     var box = document.createElement('div');
     box.className = 'swipe';

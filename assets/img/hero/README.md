@@ -12,7 +12,6 @@ hero-4.jpg
 hero-5.jpg
 hero-6.jpg
 hero-7.jpg
-hero-8.jpg
 ```
 
 - **1번부터 순서대로** 넣어주세요. 중간 번호를 건너뛰면 그 뒤 사진은 나오지 않습니다.
