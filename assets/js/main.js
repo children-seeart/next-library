@@ -216,4 +216,54 @@
       }, 5000);
     }
   });
+
+  /* 사진 격자 넘겨보기 — 휴대폰에서만 보이는 화살표와 점을 달아 줍니다.
+     넘기는 동작은 CSS 스크롤 스냅이 맡고, 여기서는 버튼과 점만 맞춥니다. */
+  Array.prototype.forEach.call(document.querySelectorAll('.grid-3[data-swipe]'), function (grid) {
+    var imgs = grid.querySelectorAll('img');
+    if (imgs.length < 2) return;
+    var box = document.createElement('div');
+    box.className = 'swipe';
+    grid.parentNode.insertBefore(box, grid);
+    box.appendChild(grid);
+
+    function current() { return Math.round(grid.scrollLeft / grid.clientWidth); }
+    function go(k) {
+      k = (k + imgs.length) % imgs.length;
+      grid.scrollTo({ left: imgs[k].offsetLeft - grid.offsetLeft, behavior: 'smooth' });
+    }
+
+    ['prev', 'next'].forEach(function (way) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'slides__arrow';
+      b.setAttribute('data-way', way);
+      b.setAttribute('aria-label', way === 'prev' ? '이전 사진' : '다음 사진');
+      b.innerHTML = way === 'prev' ? '&#8249;' : '&#8250;';
+      b.addEventListener('click', function () { go(current() + (way === 'prev' ? -1 : 1)); });
+      box.appendChild(b);
+    });
+
+    var dots = document.createElement('div');
+    dots.className = 'slides__dots';
+    var buttons = Array.prototype.map.call(imgs, function (_, k) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'slides__dot';
+      b.setAttribute('aria-label', (k + 1) + '번째 사진');
+      if (k === 0) b.setAttribute('aria-current', 'true');
+      b.addEventListener('click', function () { go(k); });
+      dots.appendChild(b);
+      return b;
+    });
+    box.appendChild(dots);
+
+    grid.addEventListener('scroll', function () {
+      var k = current();
+      buttons.forEach(function (b, i) {
+        if (i === k) b.setAttribute('aria-current', 'true');
+        else b.removeAttribute('aria-current');
+      });
+    }, { passive: true });
+  });
 })();

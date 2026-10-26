@@ -127,7 +127,7 @@ a:hover { text-decoration-color: var(--accent); }
 .wrap { width: 100%; max-width: var(--wrap); margin-inline: auto; padding-inline: 20px; }
 .wrap-wide { width: 100%; max-width: var(--wrap-wide); margin-inline: auto; padding-inline: 20px; }
 
-section[id] { padding-block: clamp(64px, 11vw, 136px); }
+section[id] { padding-block: clamp(40px, 6vw, 72px); }
 
 /* ---------- 상단 내비 ---------- */
 
@@ -568,6 +568,14 @@ figcaption { font-size: var(--step--1); color: var(--ink-mute); margin-top: 10px
   font-size: var(--step-0);
 }
 .decision p:last-child { margin-bottom: 0; }
+.decision > p:not(.decision__q) { font-size: 0.94em; }
+.decision__date {
+  display: block;
+  margin-top: 4px;
+  font-weight: 400;
+  color: var(--ink-mute);
+  font-size: var(--step--1);
+}
 
 /* ---------- 토글 ---------- */
 
@@ -815,7 +823,8 @@ section[id] + section[id]::before {
   .wrap > .grid-2:has(.ph),
   .wrap > .grid-3:has(.ph),
   .wrap > .grid-2:has(img),
-  .wrap > .grid-3:has(img) {
+  .wrap > .grid-3:has(img),
+  .wrap > .swipe {
     width: min(920px, calc(100vw - 56px));
     margin-left: 50%;
     transform: translateX(-50%);
@@ -1055,7 +1064,7 @@ h1, h2, h3,
   counter-increment: th;
   position: relative;
   margin: 0;
-  padding: 11px 0 11px 34px;
+  padding: 7px 0 7px 30px;
   border-top: 1px solid color-mix(in srgb, var(--sec, var(--line)) 55%, transparent);
   color: var(--ink-soft);
   font-size: var(--step--1);
@@ -1065,7 +1074,7 @@ h1, h2, h3,
   content: counter(th);
   position: absolute;
   left: 0;
-  top: 13px;
+  top: 9px;
   width: 19px;
   height: 19px;
   border-radius: 50%;
@@ -1078,6 +1087,11 @@ h1, h2, h3,
   font-variant-numeric: tabular-nums;
 }
 .themes__list b { color: var(--ink); margin-right: 3px; }
+/* 넓은 화면에서는 두 단으로 — 13개 주제가 한 화면에 들어오게 */
+@media (min-width: 760px) {
+  .themes__list { columns: 2; column-gap: 32px; }
+  .themes__list li { break-inside: avoid; }
+}
 .themes__note {
   margin: 16px 0 0;
   font-size: var(--step--1);
@@ -1192,6 +1206,27 @@ h1, h2, h3,
 .slides__dot:hover { background: var(--ink-mute); }
 @media (prefers-reduced-motion: reduce) {
   .slides__img { transition: none; }
+}
+
+/* ---------- 사진 3장 넘겨보기 (휴대폰) ----------
+   data-swipe 가 붙은 격자는 좁은 화면에서 한 장씩 옆으로 넘겨 봅니다.
+   넓은 화면에서는 그대로 세 장이 나란히 보입니다. */
+.swipe { position: relative; margin-block: 28px; }
+.swipe > .grid-3 { margin-block: 0; }
+.swipe > .slides__arrow,
+.swipe > .slides__dots { display: none; }
+@media (max-width: 599px) {
+  .swipe > .grid-3 {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .swipe > .grid-3::-webkit-scrollbar { display: none; }
+  .swipe > .grid-3 > img { flex: 0 0 100%; scroll-snap-align: center; }
+  .swipe > .slides__arrow { display: block; top: calc(50% - 11px); }
+  .swipe > .slides__dots { display: flex; }
 }
 
 /* 슬라이드 좌우 화살표 */
