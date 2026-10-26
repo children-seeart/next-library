@@ -653,6 +653,13 @@ details[open] summary { border-bottom: 0; }
   display: block;
 }
 .stat__label { font-size: var(--step--1); color: var(--ink-soft); margin-top: 7px; display: block; }
+/* 휴대폰에서는 숫자 카드 세 장을 한 줄에 */
+@media (max-width: 599px) {
+  .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .stat { padding: 14px 12px; }
+  .stat__num { font-size: 1.3rem; white-space: nowrap; }
+  .stat__label { font-size: 0.72rem; line-height: 1.4; margin-top: 5px; }
+}
 
 /* ---------- 배지 ---------- */
 
@@ -712,6 +719,11 @@ blockquote p:last-child { margin-bottom: 0; }
 .credits h4 { margin: 0 0 7px; font-size: var(--step--1); color: var(--accent); }
 .credits ul { margin: 0; padding: 0; list-style: none; font-size: var(--step--1); color: var(--ink-soft); }
 .credits li { margin-bottom: 3px; }
+/* 휴대폰에서는 주최를 한 줄 위에, #1·#2 는 나란히 */
+@media (max-width: 599px) {
+  .credits { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 14px; }
+  .credits > div:first-child { grid-column: 1 / -1; }
+}
 
 /* ---------- 바닥 ---------- */
 
@@ -1155,33 +1167,50 @@ h1, h2, h3,
 }
 
 /* ---------- 어린이실의 세 가지 경험 ---------- */
-.exp { margin: 26px 0 36px; }
-.exp > div {
+/* 탐색·창조·연결 — 큰 질문 카드 아래에 딸린 작은 카드 세 장 */
+.exp {
   display: grid;
-  gap: 6px 32px;
-  padding: 20px 0;
-  border-top: 1px solid var(--line);
+  gap: 12px;
+  margin: 24px 0 36px;
 }
-.exp > div:last-child { border-bottom: 1px solid var(--line); }
 @media (min-width: 760px) {
-  .exp > div { grid-template-columns: 170px minmax(0, 1fr); align-items: start; }
+  .exp { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (min-width: 900px) {
+  .wrap > .exp {
+    width: min(820px, calc(100vw - 56px));
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.exp > div {
+  background: var(--sec-bg, var(--bg-sunk));
+  border-radius: var(--radius);
+  padding: 20px 22px;
 }
 .exp dt {
   font-family: var(--font-title);
-  font-size: var(--step-1);
+  font-size: var(--step-0);
+  font-weight: 700;
   color: var(--ink);
+  margin-bottom: 8px;
 }
 .exp dt span {
   display: block;
   font-family: var(--font-body);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--sec-ink, var(--ink-mute));
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 }
-.exp dd { margin: 0; color: var(--ink-soft); }
+.exp dd { margin: 0; color: var(--ink-soft); font-size: 0.92em; line-height: 1.6; }
+@media (max-width: 599px) {
+  .exp { gap: 8px; }
+  .exp > div { padding: 14px 18px; }
+  .exp dt { margin-bottom: 4px; }
+}
 
 /* 격자에 들어간 사진은 같은 비율로 맞춰 잘라 줍니다 */
 .grid-2 > img, .grid-3 > img {
