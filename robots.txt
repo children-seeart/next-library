@@ -1,4 +1,2 @@
-# 공개 전까지 검색엔진 수집을 막습니다.
-# 10/28 정식 공개 때 이 파일을 지우거나 Disallow 줄을 지우세요.
 User-agent: *
-Disallow: /
+Allow: /
