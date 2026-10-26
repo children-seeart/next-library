@@ -69,7 +69,7 @@
   --radius:    10px;
 
   --step--1: clamp(0.82rem, 0.8rem + 0.1vw, 0.88rem);
-  --step-0:  clamp(1rem, 0.97rem + 0.15vw, 1.08rem);
+  --step-0:  clamp(0.94rem, 0.92rem + 0.12vw, 1rem);
   --step-1:  clamp(1.12rem, 1.05rem + 0.32vw, 1.32rem);
   --step-2:  clamp(1.55rem, 1.28rem + 1.3vw, 2.25rem);
   --step-3:  clamp(1.95rem, 1.5rem + 2.1vw, 3.1rem);
@@ -242,7 +242,7 @@ h3 {
 h4 { font-size: var(--step-0); font-weight: 700; margin: 28px 0 8px; }
 p { margin: 0 0 18px; }
 .lede {
-  font-size: var(--step-1);
+  font-size: clamp(1.02rem, 0.98rem + 0.2vw, 1.15rem);
   line-height: 1.52;
   color: var(--ink-soft);
   margin-bottom: 36px;
@@ -576,6 +576,22 @@ figcaption { font-size: var(--step--1); color: var(--ink-mute); margin-top: 10px
   font-size: var(--step-0);
 }
 .decision p:last-child { margin-bottom: 0; }
+
+/* 수서 원칙 카드 — 짧은 설명이라 촘촘하게 */
+.principles { margin-top: 12px; }
+.principles > .decision { margin: 0; }
+@media (max-width: 599px) {
+  .principles { gap: 8px; }
+  .principles > .decision { padding: 14px 18px; }
+  .principles .decision__q { margin-bottom: 4px; }
+}
+.sub-h { margin: 28px 0 0; font-size: var(--step-0); }
+
+/* 눈에 띄게 할 소제목 — 초록 */
+h3.h-green { color: #2F7360; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) h3.h-green { color: #92CBB8; }
+}
 .decision > p:not(.decision__q) { font-size: 0.94em; }
 .decision__date {
   display: block;
@@ -929,10 +945,10 @@ body { overflow-x: clip; }
     align-items: center;
   }
 }
+/* 인터뷰 제목 옆에 한 줄로 붙는 부제 */
 .iv__sub {
-  font-size: var(--step-0);
+  font-weight: 400;
   color: var(--ink-soft);
-  margin: -8px 0 16px;
 }
 /* 인터뷰 영상은 브랜드 영상보다 작으므로 재생 버튼도 줄인다 */
 .iv .video__play { width: 64px; height: 64px; font-size: 22px; }
@@ -1097,10 +1113,6 @@ h1, h2, h3,
 }
 .themes__list b { color: var(--ink); margin-right: 3px; }
 /* 넓은 화면에서는 두 단으로 — 13개 주제가 한 화면에 들어오게 */
-/* 휴대폰에서는 주제 이름만 — 설명은 「원본 보기」 이미지에 */
-@media (max-width: 599px) {
-  .themes__list span { display: none; }
-}
 @media (min-width: 760px) {
   .themes__list { columns: 2; column-gap: 32px; }
   .themes__list li { break-inside: avoid; }
@@ -1315,4 +1327,6 @@ h1, h2, h3,
   .pm__month { padding: 1px 5px 4px; font-size: 0.7rem; }
   .pm__years, .pm__months { padding-right: 8px; }
 }
-}
+
+/* 〈내일의 어린이실〉, ‘…’ 같은 짧은 묶음은 줄 끝에서 괄호·따옴표만 떨어지지 않게 */
+.nobr { white-space: nowrap; }

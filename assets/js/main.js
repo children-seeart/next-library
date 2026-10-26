@@ -217,6 +217,21 @@
     }
   });
 
+  /* 프로세스 맵 자료는 같은 창에서 열어, 뒤로 가기로 돌아올 수 있게 합니다.
+     돌아왔을 때 맵을 옆으로 넘겨 두었던 자리도 되살립니다. */
+  var pm = document.querySelector('.pm');
+  if (pm) {
+    pm.addEventListener('click', function (e) {
+      if (!e.target.closest('a.pm__item')) return;
+      try { sessionStorage.setItem('pmScroll', String(pm.scrollLeft)); } catch (err) {}
+    });
+    window.addEventListener('pageshow', function () {
+      var x = null;
+      try { x = sessionStorage.getItem('pmScroll'); } catch (err) {}
+      if (x !== null) pm.scrollLeft = parseInt(x, 10) || 0;
+    });
+  }
+
   /* 넘겨보기 (사진 격자, 인터뷰) — 휴대폰에서만 보이는 화살표와 점을 달아 줍니다.
      넘기는 동작은 CSS 스크롤 스냅이 맡고, 여기서는 버튼과 점만 맞춥니다. */
   Array.prototype.forEach.call(document.querySelectorAll('[data-swipe]'), function (grid) {
