@@ -101,7 +101,10 @@
       if (thumb.naturalWidth <= 120 && si < sizes.length - 1) {
         si += 1;
         thumb.src = 'https://i.ytimg.com/vi/' + id + '/' + sizes[si] + '.jpg';
+        return;
       }
+      /* 고화질 썸네일이 없으면 4:3 이미지가 오는데, 위아래에 검은 띠가 들어 있다 */
+      if (thumb.naturalWidth / thumb.naturalHeight < 1.5) thumb.classList.add('is-boxed');
     };
     box.insertBefore(thumb, btn);
 
