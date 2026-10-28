@@ -246,7 +246,6 @@ p { margin: 0 0 18px; }
   line-height: 1.52;
   color: var(--ink-soft);
   margin-bottom: 36px;
-  max-width: 30em;
 }
 .muted { color: var(--ink-mute); font-size: var(--step--1); }
 
@@ -1360,3 +1359,11 @@ h1, h2, h3,
 
 /* 〈내일의 어린이실〉, ‘…’ 같은 짧은 묶음은 줄 끝에서 괄호·따옴표만 떨어지지 않게 */
 .nobr { white-space: nowrap; }
+
+/* 공간 지도 — 흰 바탕 그림이라 어두운 화면에서도 카드처럼 보이게 */
+.map a { display: block; max-width: 560px; margin-inline: auto; }
+.map img { width: 100%; height: auto; background: #fff; border-radius: 12px; }
+.map figcaption { text-align: center; }
+@media (min-width: 900px) {
+  .wrap > figure.map { width: auto; margin-left: 0; transform: none; }
+}
